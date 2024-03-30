@@ -1,0 +1,45 @@
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media(min-width: 1000px) {
+    article {
+        max-width: 80vw;
+        margin: auto;
+    }
+}
+
+#personal-information {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 5px;
+    justify-content: space-around;
+    gap: 1rem;
+
+    span {
+        display: flex;
+        gap: 10px;
+    }
+
+    .profile-photo img {
+        height: 160px;
+        padding-inline: 1rem;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media(max-width: 480px) {
+    #personal-information {
+        justify-content: start;
+        padding: 2rem;
+    }
+}

@@ -1,0 +1,26 @@
+#skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 5px;
+    justify-content: space-around;
+    padding-inline: 2rem;
+}
+
+#skills div {
+    min-width: 200px;
+    width: max-content;
+    justify-content: start;
+}
+#skills ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media(max-width: 480px) {
+    #skills {
+        justify-content: start;
+    }
+}

@@ -1,0 +1,27 @@
+#sectors-x {
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    span {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    h4 {
+        margin: auto;
+    }
+    .sector {
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 60px;
+        }
+    }
+}
