@@ -13,16 +13,26 @@ import { ProgressBarComponent } from "../../component/progress-bar/progress-bar.
     imports: [CommonModule, ProgressBarComponent]
 })
 export class SkillsComponent {
+  showAllSkills: boolean = false;
 
   getFrontEndSkills() {
-    return skillsFrontend;
+    return this.filterList(skillsFrontend)
   }
 
   getBackEndSkills() {
-    return SkillsBackend;
+    return this.filterList(SkillsBackend);
   }
 
   getOthersSkills() {
-    return skillsOther;
+    return this.filterList(skillsOther);
   }
+
+  handleShowAllSkills() {
+    this.showAllSkills = !this.showAllSkills;
+  }
+
+  filterList(skillsList: Array<{name: string, level: number}>) {
+    return skillsList.sort((n1, n2) => n1.level - n2.level).reverse().slice(0, this.showAllSkills ? skillsList.length : 5);
+  }
+
 }

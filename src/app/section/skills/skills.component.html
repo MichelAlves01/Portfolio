@@ -1,28 +1,31 @@
 <section id="skills">
-  <div>
-    <h4>Frontend Skills</h4>
-    <ul>
-      <li *ngFor="let skill of getFrontEndSkills()">
-        <span class="title">{{ skill.name }}</span> 
-        <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>
-      </li>
-    </ul>
-  </div>
-  <div>
-    <h4>Backend Skills</h4>
-    <ul>
-      <li *ngFor="let skill of getBackEndSkills()">
-        <span class="title">{{ skill.name }}</span> 
-        <app-progress-bar class="progress-bar" [level]="'level-' + skill.level"></app-progress-bar></li>
-    </ul>
-  </div>
-  <div>
-    <h4>Other Skills</h4>
-    <ul>
-      <li *ngFor="let skill of getOthersSkills()">
-        <span>{{ skill.name }}</span> 
-        <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>  
-      </li>
-    </ul>
-  </div>
+  <span>
+    <div>
+      <h4>Frontend Skills</h4>
+      <ul>
+        <li *ngFor="let skill of getFrontEndSkills()">
+          <label class="title">{{ skill.name }}</label> 
+          <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h4>Backend Skills</h4>
+      <ul>
+        <li *ngFor="let skill of getBackEndSkills()">
+          <label class="title">{{ skill.name }}</label> 
+          <app-progress-bar class="progress-bar" [level]="'level-' + skill.level"></app-progress-bar></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Other Skills</h4>
+      <ul>
+        <li *ngFor="let skill of getOthersSkills()">
+          <label>{{ skill.name }}</label> 
+          <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>  
+        </li>
+      </ul>
+    </div>
+  </span>
+  <button (click)="handleShowAllSkills()">{{ showAllSkills ? "show less" : "show all" }}</button>
 </section>
