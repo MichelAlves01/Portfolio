@@ -18,10 +18,10 @@ jobs:
           node-version: 20
       
       - name: Install and Build
-        run: npm install && npm run build
+        run: npm install && npm run build:prod
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: prod
-          folder: dist/browser
+          folder: dist/portfolio/browser
