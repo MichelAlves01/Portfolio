@@ -25,3 +25,4 @@ jobs:
         with:
           branch: prod
           folder: dist/portfolio/browser
+          token: ${{ secrets.GI_TOKEN }}
