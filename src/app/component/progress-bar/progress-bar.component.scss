@@ -1,7 +1,7 @@
 .progress-bar {
     background-color: #c8c8c8;
     height: 15px;
-    width: 150px;
+    width: 100%;
 
     .level {
         background-color: #847cd3;
@@ -9,22 +9,22 @@
     }
 
     .level-1 {
-        width: 30px;
+        width: 20%;
     }
 
     .level-2 {
-        width: 60px;
+        width: 40%;
     }
     
     .level-3 {
-        width: 90px;
+        width: 60%;
     }
 
     .level-4 {
-        width: 120px;
+        width: 80%;
     }
 
     .level-5 {
-        width: 150px;
+        width: 100%;
     }
 }
