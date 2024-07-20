@@ -36,5 +36,10 @@
       </ul>
     </div>
   </span>
-  <button (click)="handleShowAllSkills()">{{ showAllSkills ? "show less" : "show all" }}</button>
+  <button 
+    (click)="handleShowAllSkills()" 
+    tabindex="0" 
+    role="button">
+      {{ showAllSkills ? "show less" : "show all" }}
+  </button>
 </section>
