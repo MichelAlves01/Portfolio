@@ -1,0 +1,21 @@
+$dark-100: #F2F2F2;
+$dark-200: #D8D9D7;
+$dark-300: #BFBFBD;
+$dark-400: #747474;
+$dark-500: #575757;
+$dark-600: #333333;
+$dark-700: #2b2a2a;
+$dark-800: #1b1b1b;
+$dark-900: #0D0D0D;
+
+$light-theme: $dark-900, $dark-200, $dark-100;
+$dark-theme: $dark-400, $dark-900, $dark-700;
+
+$light-card-schema: $dark-600, $dark-100, $dark-300;
+$dark-card-schema: $dark-400, $dark-800, $dark-700;
+
+$light-button-schema: $dark-500, $dark-100, $dark-100;
+$dark-button-schema: $dark-400, $dark-800, $dark-800;
+
+$light-button-selected-schema: $dark-500, $dark-300, $dark-300;
+$dark-button-selected-schema: $dark-400, $dark-600, $dark-600;

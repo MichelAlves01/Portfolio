@@ -1,9 +1,17 @@
+[] update readme file
+[] color pallete
+[] multi-language pt-br - en-us
+[] Reuse section css with a class "portfolio-section"
+[] modal to view details for
+    - [] skills
+    - [] sectors
+[] complete footer
+-----
 [in pogress] acessiblity
 [x] summary
 [x] complete skills
-[] complete footer
+
 [x] deploy to Github pages
-[] Reuse section css with a class "portfolio-section"
 [x] add limit skill visible
-[] color pallete
-[] multi-language pt-br - en-us
+
+

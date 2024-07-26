@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { sectorsX } from '../../../data/sectors-x';
+import { sectorsX } from '../../../../../data/sectors-x';
 import { CommonModule } from '@angular/common';
 
 @Component({

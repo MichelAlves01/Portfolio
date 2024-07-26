@@ -1,0 +1,59 @@
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media(min-width: 1000px) {
+    article {
+        max-width: 80vw;
+        margin: auto;
+    }
+}
+
+#personal-information {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1.5rem 3rem;
+    justify-content: space-between;
+    gap: 1rem;
+
+    span {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .profile-photo img {
+        height: 160px;
+        border-radius: 50%;
+        //border: 2px solid #BFBFBD;
+        //box-shadow: 2px 8px 35px -8px rgba(0,0,0,0.49);
+        //-webkit-box-shadow: 2px 8px 35px -8px rgba(0,0,0,0.49);
+        //-moz-box-shadow: 2px 8px 35px -8px rgba(0,0,0,0.49);
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media(max-width: 480px) {
+    #personal-information {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding: 2rem;
+        text-align: center;
+        span {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+#summary {
+    padding: 0.4rem;
+}

@@ -1,0 +1,14 @@
+@use './colors' as *;
+
+@mixin color-scheme($text, $background, $border) {
+    color: $text;
+    background-color: $background;
+    border: 1px solid $border;
+}
+.light {
+    @include color-scheme($light-theme...);
+}
+
+.dark {
+    @include color-scheme($light-theme...);
+}

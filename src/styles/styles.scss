@@ -1,0 +1,46 @@
+@use './reset.scss' as *;
+@use './colors' as *;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+main {
+    @include color-scheme($light-theme...);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+
+    section {
+        border: 2px;
+        @include color-scheme($light-card-schema...);
+        border-radius: 5px;
+    }
+    
+    button {
+        @include color-scheme($light-button-schema...)
+
+    }
+
+    button.selected {
+        @include color-scheme($light-button-selected-schema...)
+    }
+}
+
+main.dark {
+    @include color-scheme($dark-theme...);
+
+    section {
+        @include color-scheme($dark-card-schema...);
+        border-radius: 5px;
+    }
+
+    button {
+        @include color-scheme($dark-button-schema...)
+    }
+
+    button.selected {
+        @include color-scheme($dark-button-selected-schema...)
+    }
+}
+
+
+

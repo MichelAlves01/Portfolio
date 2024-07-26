@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { skillsFrontend } from '../../../data/skills-frontend';
-import { SkillsBackend } from '../../../data/skills-backend';
-import { skillsOther } from '../../../data/skills-others';
+import { skillsFrontend } from '../../../../../data/skills-frontend';
+import { SkillsBackend } from '../../../../../data/skills-backend';
+import { skillsOther } from '../../../../../data/skills-others';
 import { CommonModule } from '@angular/common';
-import { ProgressBarComponent } from "../../component/progress-bar/progress-bar.component";
+import { ProgressBarComponent } from "../../../../component/progress-bar/progress-bar.component";
 
 @Component({
     selector: 'app-skills',

@@ -1,16 +1,28 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { SkillsComponent } from "./section/skills/skills.component";
-import { SectorsXComponent } from './section/sectors-x/sectors-x.component';
+import { Component, OnChanges } from '@angular/core';
+import { RouterModule, Router } from '@angular/router';
+import { GlobalService } from './service/global.service';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, SkillsComponent, SectorsXComponent]
+    imports: [RouterModule, CommonModule]
 })
 export class AppComponent {
   title = 'Portfolio';
+  isDarkTheme = false;
+  selectedTab = '';
+
+  constructor(private router: Router, private globalService: GlobalService) {
+    globalService.switchColorSchema.subscribe({
+      next: newValue => this.isDarkTheme = newValue.isDark
+    })
+  }
+
+  changeTab(tab: string) {
+    this.selectedTab = tab;
+    this.router.navigateByUrl(tab);
+  }
 }
