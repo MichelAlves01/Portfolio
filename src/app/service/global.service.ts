@@ -7,6 +7,6 @@ import { BehaviorSubject } from "rxjs";
 export class GlobalService {
 
     public switchColorSchema = new BehaviorSubject<any>({
-        isDark: true
+        isDark: false
     });
 }

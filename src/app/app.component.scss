@@ -1,3 +1,8 @@
+$sections-gap: 0.6rem;
+$small-screen: 480px;
+$middle-screen: 680px;
+$large-screen: 1000px;
+
 main {
     padding: 0.6rem;
 }
@@ -8,6 +13,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: auto;
+    margin-bottom: 0.3rem;
     padding: 0px 5px;
 
     .menu {
@@ -28,17 +34,5 @@ header {
     .color-schema {
         height: 1.2rem;
         filter: invert(71%) sepia(0%) saturate(0%) hue-rotate(87deg) brightness(63%) contrast(60%);
-    }
-}
-
-@media(min-width: 1000px) {
-    header {
-        max-width: 78vw;
-        margin: auto;
-        .menu {
-            button {
-                font-size: smaller;
-            }
-        }
     }
 }

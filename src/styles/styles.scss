@@ -1,5 +1,9 @@
 @use './reset.scss' as *;
 @use './colors' as *;
+$sections-gap: 0.6rem;
+$small-screen: 480px;
+$middle-screen: 680px;
+$large-screen: 1000px;
 
 body {
     margin: 0;
@@ -39,6 +43,49 @@ main.dark {
 
     button.selected {
         @include color-scheme($dark-button-selected-schema...)
+    }
+}
+
+
+@media(max-width: $middle-screen) {
+    main {
+        min-height: 100vh;
+        section {
+            padding: 1.5rem;
+            margin: auto;
+        }
+    }
+}
+
+@media(min-width: $middle-screen) and (max-width: $large-screen) {
+    main {
+        min-height: 100vh;
+        section {
+            padding: 1.5rem;
+            margin: auto;
+        }
+    }
+}
+
+
+@media(min-width: $large-screen) {
+    header {
+        max-width: 78vw;
+        margin: auto;
+        .menu {
+            button {
+                font-size: smaller;
+            }
+        }
+    }
+
+    main {
+        min-height: 100vh;
+        section {
+            max-width: 80vw;
+            padding: 1.5rem;
+            margin: auto;
+        }
     }
 }
 

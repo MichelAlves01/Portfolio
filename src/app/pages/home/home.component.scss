@@ -1,59 +1,77 @@
+$sections-gap: 0.6rem;
+$small-screen: 480px;
+$middle-screen: 680px;
+$large-screen: 1000px;
+
 article {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
+    gap: $sections-gap;
 
-@media(min-width: 1000px) {
-    article {
-        max-width: 80vw;
-        margin: auto;
-    }
-}
-
-#personal-information {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 1.5rem 3rem;
-    justify-content: space-between;
-    gap: 1rem;
-
-    span {
-        display: flex;
-        gap: 1rem;
-    }
-
-    .profile-photo img {
-        height: 160px;
-        border-radius: 50%;
-        //border: 2px solid #BFBFBD;
-        //box-shadow: 2px 8px 35px -8px rgba(0,0,0,0.49);
-        //-webkit-box-shadow: 2px 8px 35px -8px rgba(0,0,0,0.49);
-        //-moz-box-shadow: 2px 8px 35px -8px rgba(0,0,0,0.49);
-    }
-
-    .contact {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-@media(max-width: 480px) {
     #personal-information {
         display: flex;
         flex-direction: column;
-        justify-content: start;
-        padding: 2rem;
-        text-align: center;
-        span {
+        flex-wrap: wrap;
+        padding: 1.5rem 0;
+        align-items: center;
+        gap: $sections-gap;
+    
+        .profile-photo img {
+            height: 10rem;
+            border-radius: 50%;
+        }
+    }
+    
+    #summary {
+        padding: 0.4rem;
+
+        .summary-links {
             display: flex;
-            flex-direction: column;
+            justify-content: end;
+            gap: $sections-gap;
+            position: relative;
+            top: 1.5rem;
         }
     }
 }
 
-#summary {
-    padding: 0.4rem;
+@media(max-width: $middle-screen) {
+    .summary-info {
+        display: flex;
+        flex-direction: column;
+
+        #personal-information {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            padding: 2rem;
+            text-align: center;
+            span {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media(min-width: $middle-screen) and (max-width: $large-screen) {
+    .summary-info {
+        display: grid;
+        grid-template-columns: 20vw 72.4vw;
+    }
+
+}
+
+
+@media(min-width: $large-screen) {
+    article {
+        max-width: 80vw;
+        margin: auto;
+
+        .summary-info {
+            display: grid;
+            grid-template-columns: 20vw 56vw;
+
+        }
+    }
 }
