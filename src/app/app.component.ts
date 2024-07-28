@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { GlobalService } from './service/global.service';
+import { Languages } from './pages/settings/settings.component.model';
 
 @Component({
     selector: 'app-root',
@@ -13,11 +14,15 @@ import { GlobalService } from './service/global.service';
 export class AppComponent {
   title = 'Portfolio';
   isDarkTheme = false;
+  language = 'En';
   selectedTab = '';
 
   constructor(private router: Router, private globalService: GlobalService) {
-    globalService.switchColorSchema.subscribe({
-      next: newValue => this.isDarkTheme = newValue.isDark
+    this.globalService.switchColorSchema.subscribe({
+      next: newValue => { 
+        this.isDarkTheme = newValue.theme === 'dark';
+        this.language = newValue.language === Languages.EN ? 'En' : 'Pt';
+      }
     })
   }
 

@@ -1,6 +1,6 @@
 <main  [ngClass]="{'dark': isDarkTheme}">
   <header>
-    <span></span>
+    <span>{{ language }}</span>
     <span class="menu">
       <button (click)="changeTab('')" [ngClass]="{'selected': selectedTab === ''}">Home</button>
       <button (click)="changeTab('projects')" [ngClass]="{'selected': selectedTab === 'projects'}">Projects</button>

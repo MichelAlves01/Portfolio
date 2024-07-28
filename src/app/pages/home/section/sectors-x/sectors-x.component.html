@@ -1,9 +1,12 @@
 <section id="sectors-x">
-    <h4>Professional Experience</h4>
+    <h3>Professional Experience</h3>
     <span>
         <div class="sector" *ngFor="let sector of getSectorsX()">
             <img [src]="sector.icon" alt="">
             <label for="">{{ sector.name }}</label>
+            <blockquote>
+                {{ sector.description }}
+            </blockquote>
         </div>
     </span>
 </section>

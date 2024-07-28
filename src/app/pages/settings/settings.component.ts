@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { GlobalService } from '../../service/global.service';
+import { Languages, Settings, defaultSettings } from './settings.component.model';
+
 @Component({
   selector: 'app-settings',
   standalone: true,
@@ -8,13 +10,21 @@ import { GlobalService } from '../../service/global.service';
   styleUrl: './settings.component.scss'
 })
 export class SettingsComponent {
+  settings: Settings = defaultSettings;
+  
   constructor(private globalService: GlobalService) {}
-  private isDark = false;
 
   changeColor() {
-    this.isDark = !this.isDark;
+    this.settings.theme = this.settings.theme === 'light' ? 'dark' : 'light';
     this.globalService.switchColorSchema.next({
-      isDark: this.isDark
+      ...this.settings
+    })
+  }
+
+  changeLanguage() {
+    this.settings.language = this.settings.language === Languages.EN ? Languages.PT : Languages.EN;
+    this.globalService.switchColorSchema.next({
+      ...this.settings
     })
   }
 }
