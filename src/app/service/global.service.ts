@@ -8,7 +8,7 @@ import { Languages, Settings } from "../pages/settings/settings.component.model"
 export class GlobalService {
 
     public switchColorSchema = new BehaviorSubject<Settings>({
-        theme: 'dark',
+        theme: 'light',
         language: Languages.EN
     });
 }

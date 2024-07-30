@@ -8,6 +8,10 @@ $dark-700: #2b2a2a;
 $dark-800: #1b1b1b;
 $dark-900: #0D0D0D;
 
+$blue-100: #c6c1f5;
+$blue-400: #6e61e6;
+$blue-800: #322c69;
+
 $light-theme: $dark-900, $dark-200, $dark-100;
 $dark-theme: $dark-400, $dark-900, $dark-700;
 
@@ -19,3 +23,6 @@ $dark-button-schema: $dark-400, $dark-800, $dark-800;
 
 $light-button-selected-schema: $dark-500, $dark-300, $dark-300;
 $dark-button-selected-schema: $dark-400, $dark-600, $dark-600;
+
+$light-tag-schema: $dark-600, $blue-100, $blue-100;
+$dark-tag-schema: $dark-300, $blue-800, $blue-800;

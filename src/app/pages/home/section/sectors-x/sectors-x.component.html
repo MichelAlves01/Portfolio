@@ -4,9 +4,16 @@
         <div class="sector" *ngFor="let sector of getSectorsX()">
             <img [src]="sector.icon" alt="">
             <label for="">{{ sector.name }}</label>
-            <blockquote>
+            <span>
                 {{ sector.description }}
-            </blockquote>
+
+                <nav>
+                    <div class="company-tag tag">AEP</div>
+                    <div class="company-tag tag">AEP</div>
+                </nav>
+
+            </span>
+
         </div>
     </span>
 </section>

@@ -27,6 +27,22 @@ main {
     button.selected {
         @include color-scheme($light-button-selected-schema...)
     }
+
+    .tag {
+        @include color-scheme($light-tag-schema...);
+    }
+
+    .pane {
+        @include color-scheme($light-card-schema...);
+        position: relative;
+        animation-name: pane;
+        animation-duration: 500ms;
+    }
+
+    @keyframes pane {
+        0%   {top:0px;}
+        100% {top:-500px;}
+    }
 }
 
 main.dark {
@@ -43,6 +59,22 @@ main.dark {
 
     button.selected {
         @include color-scheme($dark-button-selected-schema...)
+    }
+
+    .tag {
+        @include color-scheme($dark-tag-schema...);
+    }
+
+    .pane {
+        @include color-scheme($dark-card-schema...);
+        position: relative;
+        animation-name: pane;
+        animation-duration: 500ms;
+    }
+
+    @keyframes pane {
+        0%   {top:0px;}
+        100% {top:-500px;}
     }
 }
 
