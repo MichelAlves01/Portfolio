@@ -90,8 +90,12 @@
 
     .skill-view-mode {
         max-height: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         .skills-list {
+
             .skill-mobile-view {
                 display: block;
                 height: auto;
