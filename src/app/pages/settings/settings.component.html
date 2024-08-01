@@ -4,7 +4,7 @@
             <legend>Theme Switcher</legend>
             <input type="checkbox" id="switch" (click)="changeColor()" [checked]="settings.theme === 'dark'"/>
             <label for="switch">Toggle</label>
-            <span>{{ formattedTheme }}</span>
+            <span>{{ this.settings.theme[0].toUpperCase() +  this.settings.theme.slice(1) }}</span>
         </fieldset>
         <fieldset class="language-select">
             <legend>Language Options</legend>
@@ -20,9 +20,9 @@
 
         </fieldset>
         <fieldset class="cv-options">
-            <legend>CV</legend>
-            <button type="button" class="download-button" download>Download English CV</button>
-            <button type="button" class="download-button" download>Download Portuguese CV</button>
+            <legend>CV Download</legend>
+            <button type="button" class="download-button" download>English CV</button>
+            <button type="button" class="download-button" download>Portuguese CV</button>
         </fieldset>
     </section>
     
