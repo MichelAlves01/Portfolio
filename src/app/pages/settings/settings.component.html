@@ -1,7 +1,29 @@
 <div class="main">
     <section>
-        <button (click)="changeColor()">switch dark</button>
-        <button (click)="changeLanguage()">Change language</button>
+        <fieldset class="theme-switcher">
+            <legend>Theme Switcher</legend>
+            <input type="checkbox" id="switch" (click)="changeColor()" [checked]="settings.theme === 'dark'"/>
+            <label for="switch">Toggle</label>
+            <span>{{ formattedTheme }}</span>
+        </fieldset>
+        <fieldset class="language-select">
+            <legend>Language Options</legend>
+            <div class="input-select">
+                <select 
+                name="languages" 
+                id="lang" 
+                (change)="changeLanguage($event)">
+                <option value="english">English</option>
+                <option value="portuguese">Portuguese</option>
+            </select>
+            </div>
+
+        </fieldset>
+        <fieldset class="cv-options">
+            <legend>CV</legend>
+            <button type="button" class="download-button" download>Download English CV</button>
+            <button type="button" class="download-button" download>Download Portuguese CV</button>
+        </fieldset>
     </section>
     
 </div>

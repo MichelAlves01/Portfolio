@@ -1,54 +1,51 @@
 <div class="main">
-    <article>
-        <section class="summary-info">
-          <div id="personal-information">
+    <section class="summary-info">
+      <div id="personal-information">
+        <span>
+          <div class="profile-photo">
+            <img src="assets/my-profile-photo.jpg" alt="my profile photo">
+          </div>
+          <div class="job-title">
+            <h2>Michel Alves</h2>
+            <h4>FullStack Developer</h4>
+            
+          </div>
+        </span>
+      </div>
+      <div id="summary">
+        <article>
+          <h2>About Me</h2>
+          <p>Hello, I am <b>Software Developer</b>, I've been working with back-end and front-end development for about 9+ years experience.</p>
+          <p>While working on back-end I had some experience with <b>Java</b> with <b>Spring boot</b> framework and <b>NodeJs</b> with <b>Express</b> framework,
+          and while working on front-end I had some experience with JavaScript ( <b>Angular</b>, <b>ReactJS</b> )</p>
+          <p>Experience with customer from (Financial, Telecom, Electricity, Energy & Utilities) sectors.</p>
+          <nav class="summary-links">
             <span>
-              <div class="profile-photo">
-                <img src="assets/my-profile-photo.jpg" alt="my profile photo">
-              </div>
-              <div class="job-title">
-                <h2>Michel Alves</h2>
-                <h4>FullStack Developer</h4>
-                
-              </div>
-            </span>
-          </div>
-          <div id="summary">
-            <blockquote>
-              <h2>About Me</h2>
-              <p>Hello, I am <b>Software Developer</b>, I've been working with back-end and front-end development for about 9+ years experience.</p>
-              <p>While working on back-end I had some experience with <b>Java</b> with <b>Spring boot</b> framework and <b>NodeJs</b> with <b>Express</b> framework,
-              and while working on front-end I had some experience with JavaScript ( <b>Angular</b>, <b>ReactJS</b> )</p>
-              <p>Experience with customer from (Financial, Telecom, Electricity, Energy & Utilities) sectors.</p>
-              <nav class="summary-links">
-                <span>
-                  <a 
-                    href="https://www.linkedin.com/in/michel-alves-bb40b463/" 
-                    target="_blank" 
-                    aria-label="Check my linkedin page"
-                    tabindex="0">
-                      Linkedin
-                  </a>
-              </span>
-              <span>
-                <a 
-                  href="https://github.com/MichelAlves01" 
-                  target="_blank"
-                  aria-label="Check my GitHub page"
-                  tabindex="0">
-                    GitHub
-                </a></span>
-              </nav>
-
-            </blockquote>
-          </div>
-        </section>
-        
-      <app-skills></app-skills>
-      <app-sectors-x></app-sectors-x>
-      <footer>
-        <blockquote>Portfolio web developed using Angular 17.02, SCSS, HTML5 </blockquote>
-      </footer>
-    </article>
+              <button
+                class="link-button"
+                (click)="openLinkedinProfile()" 
+                aria-label="Check my linkedin page"
+                tabindex="0">
+                  Linkedin
+              </button>
+          </span>
+          <span>
+            <button 
+              class="link-button"
+              (click)="openGitHubProfile()"
+              aria-label="Check my GitHub page"
+              tabindex="0">
+                GitHub
+            </button></span>
+          </nav>
+        </article>
+      </div>
+    </section>
+    
+  <app-skills></app-skills>
+  <app-sectors-x></app-sectors-x>
+  <footer>
+    <blockquote>Portfolio web developed using Angular 17.02, SCSS, HTML5 </blockquote>
+  </footer>
   
 </div>

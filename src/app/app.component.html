@@ -1,14 +1,14 @@
 <main  [ngClass]="{'dark': isDarkTheme}">
   <header>
-    <span>{{ language }}</span>
+    <span (click)="changeTab('settings')">{{ language }}</span>   
     <span class="menu">
       <button (click)="changeTab('')" [ngClass]="{'selected': selectedTab === ''}">Home</button>
       <button (click)="changeTab('projects')" [ngClass]="{'selected': selectedTab === 'projects'}">Projects</button>
       <button (click)="changeTab('settings')" [ngClass]="{'selected': selectedTab === 'settings'}">Settings</button>
     </span>
-    <span>
-      <img *ngIf="!isDarkTheme" src="assets/brightness.png" class="color-schema">
-      <img *ngIf="isDarkTheme" src="assets/night-mode.png" class="color-schema">
+    <span (click)="changeTab('settings')">
+        <img *ngIf="!isDarkTheme" src="assets/brightness.png" class="color-schema">
+        <img *ngIf="isDarkTheme" src="assets/night-mode.png" class="color-schema">
     </span>
   </header>
   

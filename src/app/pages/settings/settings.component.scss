@@ -1,0 +1,59 @@
+$switcher-height: 18px;
+$switcher-width: 42px;
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    // used reference https://codepen.io/mburnette/pen/LxNxNg
+    .theme-switcher {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+
+        input[type=checkbox]{
+            height: 0;
+            width: 0;
+            visibility: hidden;
+        }
+        
+        label {
+            cursor: pointer;
+            text-indent: -9999px;
+            width: $switcher-width;
+            height: $switcher-height;
+            display: block;
+            border-radius: 100px;
+            position: relative;
+        }
+        
+        label:after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: $switcher-height;
+            height: $switcher-height;
+            border-radius: 90px;
+            transition: 0.1s;
+        }
+        
+        input:checked + label:after {
+            left: calc(100%);
+            transform: translateX(-100%);
+        }
+        
+        label:active:after {
+            width: $switcher-height;
+        }
+    }
+
+    .cv-options {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+}
+
+

@@ -1,9 +1,11 @@
+@use '../../../styles/colors.scss' as *;
+
 $sections-gap: 0.6rem;
 $small-screen: 480px;
 $middle-screen: 680px;
 $large-screen: 1000px;
 
-article {
+.main {
     display: flex;
     flex-direction: column;
     gap: $sections-gap;
@@ -29,8 +31,7 @@ article {
             display: flex;
             justify-content: end;
             gap: $sections-gap;
-            position: relative;
-            top: 1.5rem;
+            margin-top: 2rem;
         }
     }
 }
@@ -64,14 +65,13 @@ article {
 
 
 @media(min-width: $large-screen) {
-    article {
+    .main {
         max-width: 80vw;
         margin: auto;
 
         .summary-info {
             display: grid;
             grid-template-columns: 25% 75%;
-
         }
     }
 }

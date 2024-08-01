@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule, Router, NavigationStart } from '@angular/router';
 import { GlobalService } from './service/global.service';
 import { Languages } from './pages/settings/settings.component.model';
 
@@ -27,6 +27,12 @@ export class AppComponent {
         this.language = newValue.language === Languages.EN ? 'En' : 'Pt';
       }
     })
+
+    this.router.events.subscribe((event: any) => {
+      if(event instanceof NavigationStart) {
+        this.selectedTab = event.url.slice(1);
+      }
+  })
   }
 
   changeTab(tab: string) {
@@ -54,5 +60,9 @@ export class AppComponent {
       if (selectedTabIndex > 0) this.selectedTab = this.tabs[selectedTabIndex-1];
       this.router.navigateByUrl(this.selectedTab);
     }
+  }
+
+  onUrlChange(event: EventListener) {
+
   }
 }

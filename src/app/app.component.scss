@@ -13,6 +13,10 @@ header {
     margin-bottom: 0.3rem;
     padding: 0px 5px;
 
+    span {
+        cursor: pointer;
+    }
+
     .menu {
         display: flex;
         justify-content: center;

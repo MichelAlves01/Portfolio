@@ -1,5 +1,6 @@
 @use './reset.scss' as *;
 @use './colors' as *;
+
 $sections-gap: 0.6rem;
 $small-screen: 480px;
 $middle-screen: 680px;
@@ -16,16 +17,29 @@ main {
     section {
         border: 2px;
         @include color-scheme($light-card-schema...);
-        border-radius: 5px;
+        border-radius: 0.25rem;
+        
     }
     
     button {
-        @include color-scheme($light-button-schema...)
-
+        @include color-scheme($light-button-schema...);
+        cursor: pointer;
     }
 
     button.selected {
         @include color-scheme($light-button-selected-schema...)
+    }
+
+    fieldset {
+        @include color-scheme($light-card-schema...);
+        padding: 2rem 1rem;
+    }
+
+    select {
+        @include color-scheme($light-input-schema...);
+        width: 12rem;
+        height: 2rem;
+        font-size: 14px;
     }
 
     .tag {
@@ -42,6 +56,35 @@ main {
     @keyframes pane {
         0%   {top:0px;}
         100% {top:-500px;}
+    }
+
+    .link-button, .download-button {
+        height: 2rem;
+        padding: 0 20px;
+        border: 1px solid $blue-800;
+        font-weight: 800;
+        cursor: pointer;
+        border-radius: 0.25rem;
+    }
+
+    .link-button:hover,.download-button:hover {
+        background-color: $blue-100;
+        border: 1px solid $blue-800;
+    }
+
+    .theme-switcher {
+        
+        label {
+            @include color-scheme($switcher-schema...)
+        }
+        
+        label:after {
+            background: $dark-200;
+        }
+        
+        input:checked + label {
+            background: $dark-500;
+        }
     }
 }
 
@@ -61,6 +104,18 @@ main.dark {
         @include color-scheme($dark-button-selected-schema...)
     }
 
+    fieldset {
+        @include color-scheme($dark-card-schema...);
+        padding: 2rem 1rem;
+    }
+
+    select {
+        @include color-scheme($dark-input-schema...);
+        width: 12rem;
+        height: 2rem;
+        font-size: 14px;
+    }
+
     .tag {
         @include color-scheme($dark-tag-schema...);
     }
@@ -75,6 +130,19 @@ main.dark {
     @keyframes pane {
         0%   {top:0px;}
         100% {top:-500px;}
+    }
+
+    .link-button, .download-button {
+        height: 2rem;
+        padding: 0 20px;
+        border: 1px solid $blue-800;
+        font-weight: 800;
+        cursor: pointer;
+        border-radius: 0.25rem;
+    }
+
+    .link-button:hover, .download-button:hover {
+        background-color: $blue-900;
     }
 }
 

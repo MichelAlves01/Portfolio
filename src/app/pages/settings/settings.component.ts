@@ -11,18 +11,20 @@ import { Languages, Settings, defaultSettings } from './settings.component.model
 })
 export class SettingsComponent {
   settings: Settings = defaultSettings;
+  formattedTheme = 'Light';
   
   constructor(private globalService: GlobalService) {}
 
   changeColor() {
     this.settings.theme = this.settings.theme === 'light' ? 'dark' : 'light';
+    this.formattedTheme = this.settings.theme[0].toUpperCase() + this.settings.theme.slice(1);
     this.globalService.switchColorSchema.next({
       ...this.settings
     })
   }
 
-  changeLanguage() {
-    this.settings.language = this.settings.language === Languages.EN ? Languages.PT : Languages.EN;
+  changeLanguage(selected: any) {
+    this.settings.language = selected.target.value;
     this.globalService.switchColorSchema.next({
       ...this.settings
     })

@@ -1,11 +1,15 @@
+@use '../../../styles/colors.scss' as *;
+
 .progress-bar {
-    background-color: #c8c8c8;
-    height: 15px;
+    background-color: $dark-300;
+    height: 18px;
+    border: 1px solid $blue-800;
     width: 100%;
+    border-radius: 0.25rem;
 
     .level {
-        background-color: #322c69;
-        height: 15px;
+        background-color: $blue-800;
+        height: 18px;
     }
 
     .level-1 {
