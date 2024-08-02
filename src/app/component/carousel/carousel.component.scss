@@ -1,0 +1,93 @@
+@use '../../../styles/styles.scss' as *;
+@use '../../../styles/colors.scss' as *;
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+
+    .carousel-view {
+        display: flex;
+        align-items: center;
+        background-color: $dark-900;
+        padding: 0 2rem;
+
+        img {
+            height: 95%;
+            max-width: fit-content;
+        }
+
+        button {
+            background-color: transparent;
+        }
+
+        button:disabled {
+            border: none;
+            color: transparent;
+            cursor: auto;
+
+            img {
+                filter:brightness(0%) contrast(80%);
+            }
+        }
+
+    }
+    span {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+
+        .slide-index {
+            height: 14px;
+            background-color: $dark-400;
+            width: 14px;
+            border-radius: 50%;
+        }
+
+        .slide-index-selected {
+            background-color: $blue-400;
+        }
+    }
+
+}
+
+//mobile
+@media (max-width: $small-screen) {
+    .carousel-view {
+        height: 240px;
+        justify-content: center;
+
+        .link-button {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+//middle screen
+@media (min-width: $small-screen) and (max-width: $large-screen) {
+    .carousel-view {
+        height: 360px;
+        justify-content: space-between;
+
+        img {
+            width: 80%;
+        }
+    }
+}
+
+//large screen
+@media (min-width: $large-screen) {
+    .carousel-view {
+        height: 440px;
+        justify-content: space-between;
+
+        img {
+            width: 80%;
+        }
+    }
+}
+

@@ -1,0 +1,30 @@
+
+<div class="carousel">
+    <menu class="carousel-view">
+        <button
+            class="link-button"
+            [disabled]="selectedSlide.index === 0"
+            (click)="prevSlide()"
+            aria-label="Go to previous slide"
+            tabindex="0">
+                <img src="assets/previous.png" class="color-schema" alt="">
+        </button>
+        <img [src]="selectedSlide.imagePath" alt="" >
+        <button
+            class="link-button"
+            [disabled]="selectedSlide.index === slides.length - 1"
+            (click)="nextSlide()"
+            aria-label="Go to next slide"
+            tabindex="0">
+                <img src="assets/next.png" class="color-schema" alt="">
+        </button>
+    </menu>
+    <span>
+        <div *ngFor="let slide of slides; index as i">
+            <nav class="slide-index" [ngClass]="{'slide-index-selected': selectedSlide.index === i}"></nav>
+        </div>
+    </span>
+    <span>
+        <p>{{ selectedSlide.description }}</p>
+    </span>
+</div>

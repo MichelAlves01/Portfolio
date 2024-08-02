@@ -2,9 +2,9 @@
 @use './colors' as *;
 
 $sections-gap: 0.6rem;
-$small-screen: 480px;
-$middle-screen: 680px;
-$large-screen: 1000px;
+$small-screen: 767px;
+$middle-screen: 992px;
+$large-screen: 1200px;
 
 body {
     margin: 0;
@@ -44,18 +44,23 @@ main {
 
     .tag {
         @include color-scheme($light-tag-schema...);
+        padding: 0.08rem 0.8rem 0.3rem 0.8rem;
+        border-radius: 1rem;
+        margin: 0.3rem 0.3rem;
+        max-height: 1.5rem;
     }
 
     .pane {
         @include color-scheme($light-card-schema...);
         position: relative;
         animation-name: pane;
-        animation-duration: 500ms;
+        animation-duration: 300ms;
+        border: none;
     }
 
     @keyframes pane {
-        0%   {top:0px;}
-        100% {top:-500px;}
+        from {opacity: 0;}
+        to {opacity: 1;}
     }
 
     .link-button, .download-button {
@@ -85,6 +90,15 @@ main {
         input:checked + label {
             background: $dark-500;
         }
+    }
+
+    .color-schema {
+        height: 1.2rem;
+        filter: invert(71%) sepia(0%) saturate(0%) hue-rotate(87deg) brightness(63%) contrast(60%);
+    }
+
+    .project {
+        @include color-scheme($light-card-schema...);
     }
 }
 
@@ -118,6 +132,9 @@ main.dark {
 
     .tag {
         @include color-scheme($dark-tag-schema...);
+        padding: 0.1rem 0.8rem;
+        border-radius: 1rem;
+        margin: 0.3rem 0.3rem;
     }
 
     .pane {
@@ -125,11 +142,7 @@ main.dark {
         position: relative;
         animation-name: pane;
         animation-duration: 500ms;
-    }
-
-    @keyframes pane {
-        0%   {top:0px;}
-        100% {top:-500px;}
+        z-index: -1;
     }
 
     .link-button, .download-button {
@@ -143,6 +156,10 @@ main.dark {
 
     .link-button:hover, .download-button:hover {
         background-color: $blue-900;
+    }
+
+    .project {
+        @include color-scheme($dark-card-schema...)
     }
 }
 

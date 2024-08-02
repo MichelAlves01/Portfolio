@@ -1,5 +1,71 @@
 <div class="main">
     <section>
-        projects works!
+        <article class="project">
+            <header>
+                <h3>Project 1</h3>
+                <nav>
+                    <div class="tag">live</div>
+                    <div class="tag">In progress</div>
+                </nav>
+            </header>
+            <legend>this project has this legend</legend>
+            <div class="project-content">
+                <app-carousel [slides]="projects"></app-carousel>
+            </div>
+            <div class="project-links">
+                <button
+                    class="link-button"
+                    aria-label="Check my linkedin page"
+                    tabindex="0">
+                    Open live
+                </button>
+                <button
+                    class="link-button"
+                    aria-label="Check my linkedin page"
+                    tabindex="0">
+                        Open GitHub
+                </button>
+                <button
+                    class="link-button"
+                    aria-label="Check my linkedin page"
+                    tabindex="0">
+                    Open Technical Doc
+                </button>
+            </div>
+        </article>
+
+        <article class="project">
+            <header>
+                <h3>Project 2</h3>
+                <nav>
+                    <div class="tag">live</div>
+                    <div class="tag">Complete</div>
+                </nav>
+            </header>
+            <legend>this project has this legend</legend>
+            <div class="project-content">
+                <app-carousel [slides]="projects"></app-carousel>
+            </div>
+            <div class="project-links">
+                <button
+                    class="link-button"
+                    aria-label="Check my linkedin page"
+                    tabindex="0">
+                    Open live
+                </button>
+                <button
+                    class="link-button"
+                    aria-label="Check my linkedin page"
+                    tabindex="0">
+                        Open GitHub
+                </button>
+                <button
+                    class="link-button"
+                    aria-label="Check my linkedin page"
+                    tabindex="0">
+                    Open Technical Doc
+                </button>
+            </div>
+        </article>
     </section>
 </div>

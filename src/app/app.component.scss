@@ -31,14 +31,9 @@ header {
     
   
     }
-
-    .color-schema {
-        height: 1.2rem;
-        filter: invert(71%) sepia(0%) saturate(0%) hue-rotate(87deg) brightness(63%) contrast(60%);
-    }
 }
 
-@media(min-width: $large-screen) {
+@media(min-width: $small-screen) {
     header {
         max-width: 78vw;
         margin: auto;

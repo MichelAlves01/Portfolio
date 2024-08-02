@@ -19,24 +19,23 @@ export class SkillsComponent {
   othersSkills: Array<Skill> = [];
   showAllSkills: boolean = false;
   selectedSkill: Skill = new Skill();
+  emptySkill = new Skill();
   paneEffect = false;
 
   ngOnInit() {
-    this.getFrontEndSkills();
-    this.getBackEndSkills();
-    this.getOthersSkills();
+    this.setupAllSkill();
   }
 
   getFrontEndSkills() {
-    this.frontendSkills = this.filterList(skillsFrontend)
+    this.frontendSkills = this.frontendSkills.length > 0 ? this.updateList(skillsFrontend) : this.filterList(skillsFrontend)
   }
 
   getBackEndSkills() {
-    this.backendSkills = this.filterList(SkillsBackend);
+    this.backendSkills = this.backendSkills.length > 0 ? this.updateList(SkillsBackend) : this.filterList(SkillsBackend);
   }
 
   getOthersSkills() {
-    this.othersSkills = this.filterList(skillsOther);
+    this.othersSkills = this.othersSkills.length > 0 ? this.updateList(skillsOther) : this.filterList(skillsOther)
   }
 
   handleSkillSelection(skill: Skill) {
@@ -44,10 +43,16 @@ export class SkillsComponent {
 
       if (skill.name === this.selectedSkill.name) {
         this.selectedSkill = new Skill();
+        this.setupAllSkill();
       } else {
+        const prevSkill = this.selectedSkill;
         this.selectedSkill = skill;
+        if (prevSkill.level === 0) {
+          this.setupAllSkill();
+        }
       }
-      this.showAllSkills = true;
+
+
   }
 
   private setPaneEffect() {
@@ -57,8 +62,15 @@ export class SkillsComponent {
     }
   }
 
+  private setupAllSkill() {
+    this.getFrontEndSkills();
+    this.getBackEndSkills();
+    this.getOthersSkills();
+  }
+
   handleShowAllSkills() {
     this.showAllSkills = !this.showAllSkills;
+    this.setupAllSkill();
   }
 
   @HostListener("window:keydown", ['$event'])
@@ -70,7 +82,7 @@ export class SkillsComponent {
     const isSkillChangeEvent = isArrayDownEvent || isArrayUpEvent ;
 
     if (isSkillChangeEvent) {
-      let skills = [];
+      let skills: Array<Skill> = [];
       switch(this.selectedSkill.type) {
         case 'fe':
           skills = this.frontendSkills;
@@ -82,30 +94,37 @@ export class SkillsComponent {
           skills = this.othersSkills;
 
       }
-      this.updateSelectedSkillOnKeyDown(isArrayDownEvent, isArrayUpEvent, skills);
+      if (skills.length > 0) {
+        this.updateSelectedSkillOnKeyDown(isArrayDownEvent, isArrayUpEvent, skills);
+      }
     }
 
   }
 
   private updateSelectedSkillOnKeyDown(isArrayDownEvent: boolean, isArrayUpEvent: boolean, skills: Array<Skill>) {
     if (isArrayDownEvent) {
-      const skillIndex = skills.indexOf(this.selectedSkill);
-      const nextSkill = skills[skillIndex + 1];
-      if (nextSkill.name !== this.selectedSkill.name) this.setPaneEffect();
-      this.selectedSkill = nextSkill || this.selectedSkill;
+        const skillIndex = skills.indexOf(this.selectedSkill);
+        const nextSkill = skills[skillIndex + 1];
+        if (nextSkill.name !== this.selectedSkill.name) this.setPaneEffect();
+        this.selectedSkill = nextSkill || this.selectedSkill;
     } else if (isArrayUpEvent) {
-      const skillIndex = skills.indexOf(this.selectedSkill);
-      const prevSkill = skills[skillIndex - 1];
-      if (prevSkill.name !== this.selectedSkill.name) this.setPaneEffect();
-      this.selectedSkill = prevSkill || this.selectedSkill;
+        const skillIndex = skills.indexOf(this.selectedSkill);
+        const prevSkill = skills[skillIndex - 1];
+        if (prevSkill.name !== this.selectedSkill.name) this.setPaneEffect();
+        this.selectedSkill = prevSkill || this.selectedSkill;
     }
+  }
+
+  updateList(skillsList: Array<Skill>) {
+    return skillsList
+          .slice(0, this.showAllSkills || this.selectedSkill.level > 0 ? skillsList.length : 5);
   }
 
   filterList(skillsList: Array<Skill>) {
     return skillsList
           .sort((n1, n2) => n1.level - n2.level)
           .reverse()
-          .slice(0, this.showAllSkills ? skillsList.length : 5);
+          .slice(0, this.showAllSkills || this.selectedSkill.level > 0 ? skillsList.length : 5);
   }
 
 }

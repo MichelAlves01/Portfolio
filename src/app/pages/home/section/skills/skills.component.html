@@ -1,30 +1,23 @@
 <section class="skills" [ngClass]="{'skill-view-mode': selectedSkill.level !== 0}">
   <span class="skills-list">
-    <div>
-      <h3>Frontend Skills</h3>
-      <ul>
-        <li *ngFor="let skill of frontendSkills">
-          <div 
-            (click)="handleSkillSelection(skill)" 
-            [ngClass]="{'skill-selected': selectedSkill.name === skill.name}">
-            <span>
-              <label class="title">{{ skill.name }}</label>
-              <label class="title">{{ skill.level }}</label>
-            </span>
-            <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>
-            <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">{{ skill.content }}</div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <h3>Backend Skills</h3>
+    <div *ngIf="this.selectedSkill.type === 'be' || this.selectedSkill.level === 0">
+      <header>
+        <h3>Backend Skills</h3>        
+        <button
+          *ngIf="selectedSkill.type === 'be'"
+          (click)="handleSkillSelection(this.selectedSkill)" 
+          aria-label="return"
+          tabindex="0">
+          <img src="assets/hide.png" class="color-schema">
+        </button>
+      </header>
+
       <ul>
         <li *ngFor="let skill of backendSkills">
           <div (click)="handleSkillSelection(skill)" [ngClass]="{'skill-selected': selectedSkill.name === skill.name}">
             <span>
               <label class="title">{{ skill.name }}</label>
-              <label class="title">{{ skill.level }}</label>
+              <label class="title">{{ skill.level + '/5' }}</label>
             </span>
             <app-progress-bar class="progress-bar" [level]="'level-' + skill.level"></app-progress-bar>
             <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">{{ skill.content }}</div>
@@ -32,14 +25,49 @@
         </li>
       </ul>
     </div>
-    <div>
-      <h3>Other Skills</h3>
+    <div *ngIf="this.selectedSkill.type === 'fe' || this.selectedSkill.level === 0">
+      <header>
+        <h3>Frontend Skills</h3>        
+        <button
+          *ngIf="selectedSkill.type === 'fe'"
+          (click)="handleSkillSelection(this.selectedSkill)" 
+          aria-label="return"
+          tabindex="0">
+          <img src="assets/hide.png" class="color-schema">
+        </button>
+      </header>
+      <ul>
+        <li *ngFor="let skill of frontendSkills">
+          <div 
+            (click)="handleSkillSelection(skill)" 
+            [ngClass]="{'skill-selected': selectedSkill.name === skill.name}">
+            <span>
+              <label class="title">{{ skill.name }}</label>
+              <label class="title">{{ skill.level + '/5'}}</label>
+            </span>
+            <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>
+            <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">{{ skill.content }}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="this.selectedSkill.type === '*' || this.selectedSkill.level === 0">
+      <header>
+        <h3>Other Skills</h3> 
+        <button
+          *ngIf="selectedSkill.type === '*'"
+          (click)="handleSkillSelection(this.selectedSkill)" 
+          aria-label="return"
+          tabindex="0">
+          <img src="assets/hide.png" class="color-schema">
+        </button>
+      </header>
       <ul>
         <li *ngFor="let skill of othersSkills">
           <div (click)="handleSkillSelection(skill)" [ngClass]="{'skill-selected': selectedSkill.name === skill.name}">
             <span>
               <label class="title">{{ skill.name }}</label>
-              <label class="title">{{ skill.level }}</label>
+              <label class="title">{{ skill.level + '/5' }}</label>
             </span>
             <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>
             <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">{{ skill.content }}</div>
@@ -48,10 +76,14 @@
       </ul>
     </div>
   </span>
-  <span class="skill-pane" *ngIf="selectedSkill.level !== 0" [ngClass]="{'pane': paneEffect}">
+  <span class="skill-pane">
     <div>
-        <h3>{{ selectedSkill.name }}</h3>
-        <p>{{ selectedSkill.content }}</p>
+        <div class="pane-header">
+          <h3>{{ selectedSkill.name }}</h3>
+        </div>
+        <div class="skill-content" *ngIf="selectedSkill.level !== 0" [ngClass]="{'pane': paneEffect}">
+          <p>{{ selectedSkill.content }}</p>
+        </div>
     </div>
   </span>
   <button 
