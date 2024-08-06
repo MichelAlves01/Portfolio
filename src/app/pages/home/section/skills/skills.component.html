@@ -20,7 +20,9 @@
               <label class="title">{{ skill.level + '/5' }}</label>
             </span>
             <app-progress-bar class="progress-bar" [level]="'level-' + skill.level"></app-progress-bar>
-            <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">{{ skill.content }}</div>
+            <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">
+              <ng-container *ngTemplateOutlet="skillContent"></ng-container>
+            </div>
           </div>
         </li>
       </ul>
@@ -46,7 +48,6 @@
               <label class="title">{{ skill.level + '/5'}}</label>
             </span>
             <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>
-            <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">{{ skill.content }}</div>
           </div>
         </li>
       </ul>
@@ -70,7 +71,6 @@
               <label class="title">{{ skill.level + '/5' }}</label>
             </span>
             <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>
-            <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">{{ skill.content }}</div>
           </div>
         </li>
       </ul>
@@ -81,8 +81,9 @@
         <div class="pane-header">
           <h3>{{ selectedSkill.name }}</h3>
         </div>
+
         <div class="skill-content" *ngIf="selectedSkill.level !== 0" [ngClass]="{'pane': paneEffect}">
-          <p>{{ selectedSkill.content }}</p>
+          <ng-container *ngTemplateOutlet="skillContent"></ng-container>
         </div>
     </div>
   </span>
@@ -94,3 +95,12 @@
       {{ showAllSkills ? "show less" : "show all" }}
   </button>
 </section>
+
+<ng-template #skillContent>
+      <p [innerHTML]="selectedSkill.content"></p>
+
+    <p class="skill-period">Period: <span>{{ selectedSkill.tagsPeriod }}</span></p>
+    <nav>
+      <span *ngFor="let tag of selectedSkill.tags" class="tag">{{ tag }}</span>
+    </nav>
+</ng-template>

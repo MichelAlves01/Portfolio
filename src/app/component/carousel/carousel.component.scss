@@ -8,20 +8,17 @@
     .carousel-view {
         display: flex;
         align-items: center;
-        background-color: $dark-900;
-        padding: 0 2rem;
 
-        img {
+        .carousel-img {
             height: 95%;
             max-width: fit-content;
         }
 
-        button {
-            background-color: transparent;
-        }
-
         button:disabled {
+            position: relative;
+            z-index: -1;
             border: none;
+            background-color: transparent;
             color: transparent;
             cursor: auto;
 
@@ -54,15 +51,37 @@
 //mobile
 @media (max-width: $small-screen) {
     .carousel-view {
-        height: 240px;
+        height: 100%;
         justify-content: center;
+        padding: 0;
 
-        .link-button {
-            display: none;
+        .carousel-img {
+            width: 100%;
         }
 
-        img {
-            width: 100%;
+        button {
+            background-color: transparent;
+            width: 3rem;
+            padding: 0 0.2rem;
+            height: 2rem;
+            filter: invert(71%) sepia(0%) saturate(0%) hue-rotate(87deg) brightness(63%) contrast(60%);
+            border: 0;
+
+            img {
+                max-height: 2rem;
+            }
+        }
+
+        .prev-button {
+            position: relative;
+            left: 2.5rem;
+            z-index: 1;
+        }
+
+        .next-button {
+            position: relative;
+            right: 2.5rem;
+            z-index: 1;
         }
     }
 }
@@ -70,23 +89,42 @@
 //middle screen
 @media (min-width: $small-screen) and (max-width: $large-screen) {
     .carousel-view {
-        height: 360px;
+        height: 100%;
         justify-content: space-between;
+        padding: 0 2rem;
 
         img {
             width: 80%;
         }
-    }
+
+        button {
+            background-color: transparent;
+
+            img {
+                max-height: 2rem;
+            }
+        }
+
+     }
 }
 
 //large screen
 @media (min-width: $large-screen) {
     .carousel-view {
-        height: 440px;
+        height: 100%;
         justify-content: space-between;
+        padding: 0 2rem;
 
         img {
             width: 80%;
+        }
+
+        button {
+            background-color: transparent;
+
+            img {
+                max-height: 2rem;
+            }
         }
     }
 }

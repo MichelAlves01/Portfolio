@@ -48,6 +48,7 @@ main {
         border-radius: 1rem;
         margin: 0.3rem 0.3rem;
         max-height: 1.5rem;
+        white-space: nowrap;
     }
 
     .pane {
@@ -132,12 +133,9 @@ main.dark {
 
     .tag {
         @include color-scheme($dark-tag-schema...);
-        padding: 0.1rem 0.8rem;
-        border-radius: 1rem;
-        margin: 0.3rem 0.3rem;
     }
 
-    .pane {
+     .pane {
         @include color-scheme($dark-card-schema...);
         position: relative;
         animation-name: pane;

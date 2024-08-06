@@ -4,7 +4,7 @@ import { SkillsBackend } from '../../../../../data/skills-backend';
 import { skillsOther } from '../../../../../data/skills-others';
 import { CommonModule } from '@angular/common';
 import { ProgressBarComponent } from "../../../../component/progress-bar/progress-bar.component";
-import { Skill } from './skill.component.model';
+import { SelectedSkill, Skill } from './skill.component.model';
 
 @Component({
     selector: 'app-skills',
@@ -18,12 +18,14 @@ export class SkillsComponent {
   backendSkills: Array<Skill> = [];
   othersSkills: Array<Skill> = [];
   showAllSkills: boolean = false;
-  selectedSkill: Skill = new Skill();
+  selectedSkill: SelectedSkill = new SelectedSkill(new Skill());
   emptySkill = new Skill();
   paneEffect = false;
 
   ngOnInit() {
+    //this.showAllSkills = true;
     this.setupAllSkill();
+    //this.selectedSkill = new SelectedSkill(this.backendSkills[2]);
   }
 
   getFrontEndSkills() {
@@ -42,11 +44,11 @@ export class SkillsComponent {
       this.setPaneEffect();
 
       if (skill.name === this.selectedSkill.name) {
-        this.selectedSkill = new Skill();
+        this.selectedSkill = new SelectedSkill(skill);
         this.setupAllSkill();
       } else {
         const prevSkill = this.selectedSkill;
-        this.selectedSkill = skill;
+        this.selectedSkill = new SelectedSkill(skill);
         if (prevSkill.level === 0) {
           this.setupAllSkill();
         }
@@ -106,12 +108,12 @@ export class SkillsComponent {
         const skillIndex = skills.indexOf(this.selectedSkill);
         const nextSkill = skills[skillIndex + 1];
         if (nextSkill.name !== this.selectedSkill.name) this.setPaneEffect();
-        this.selectedSkill = nextSkill || this.selectedSkill;
+        this.selectedSkill = new SelectedSkill(nextSkill) || this.selectedSkill;
     } else if (isArrayUpEvent) {
         const skillIndex = skills.indexOf(this.selectedSkill);
         const prevSkill = skills[skillIndex - 1];
         if (prevSkill.name !== this.selectedSkill.name) this.setPaneEffect();
-        this.selectedSkill = prevSkill || this.selectedSkill;
+        this.selectedSkill = new SelectedSkill(prevSkill) || this.selectedSkill;
     }
   }
 

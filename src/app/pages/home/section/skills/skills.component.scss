@@ -73,6 +73,19 @@
             align-items: center;
             gap: 1rem;
         }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
+    }
+
+    .skill-period {
+        margin-top: 2rem;
+        display: flex;
+        gap: 0.3rem;
     }
 }
 
@@ -116,6 +129,11 @@
                 height: auto;
                 padding: 0.5rem 0;
                 margin-bottom: 0.5rem;
+
+                nav {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
             }
         }
 

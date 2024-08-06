@@ -12,10 +12,10 @@ import { Slide } from '../../component/carousel/carousel.component.model';
 export class ProjectsComponent {
 
 
-  projects: Array<Slide>;
+  slides: Array<Slide>;
 
   constructor() {
-    this.projects = [
+    this.slides = [
       {
         legend: 'First image',
         imagePath: 'assets/img_test_1.jpg',

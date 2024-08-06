@@ -3,74 +3,71 @@ import { Skill } from "../app/pages/home/section/skills/skill.component.model";
 export const SkillsBackend: Array<Skill>  = [
     { 
         "type": 'be',
-        "name": "SQL (Postgres, Oracle)",
-        "level": 3,
-        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-    },
-    { 
-        "type": 'be',
-        "name": "NOSQL (MongoDB)",
-        "level": 2,
-        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-    },
-    { 
-        "type": 'be',
-        "name": "Typescript",
+        "name": "Database SQL/NOSQL",
         "level": 4,
-        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        "content": `
+            <p>First experiences with <b>Postgres</b> database for the developing the my College project for thesis</p>
+            <p>My first professional experience with Database was with <b>Oracle</b> database creating some Procedures with queries for a project of UBI</p>
+            <p>After I had other experience with SQL database <b>MySql</b></p>
+            <p>While working on project PLEX from NTTData the database used was MongoDB which gave some experince with NoSql databases</p>
+        `,
+        "tags": ["UBI", "PLEX (NTT Data)", "AEP", "IBM Internal"]
     },
     { 
         "type": 'be',
-        "name": "Microservices",
+        "name": "APIs",
         "level": 3,
-        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        "content": " / ",
+        "tags": ["UBI", "AEP", "AT&T"]
     },
     { 
         "type": 'be',
         "name": "Python",
         "level": 1,
-        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        "content": `
+            <p>I had a basic experience with Python developing some cronjobs on <b>Google Cloud</b> to migrate data from one table to a history table</p>
+            <p>A part from this experince I create a personal project for generate a supermarket shopping list where I used <b>Flask</b> 
+            framework to implement the endpoint and <b>Pony ORM</b> to access databse</p>
+        `,
+        "tags": ["PLEX (NTT Data)"]
     },
     { 
         "type": 'be',
-        "name": "NestJs",
-        "level": 1,
-        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-    },
-    { 
-        "type": 'be',
-        "name": "Maven",
+        "name": "Architecture",
         "level": 3,
-        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-    },
-    { 
-        "type": 'be',
-        "name": "Swagger",
-        "level": 2,
-        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-    },
-    { 
-        "type": 'be',
-        "name": "Web API (REST)",
-        "level": 3,
-        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        "content": `
+            <p>During my carear I discovery patterns and structures to build modern and stable applications </p>
+            <p>since then I've applyied to understand and learn more on how we can build more stable and scalable applications using architectures</p>
+            <p>At first momment I learn about MVC pattern because it was implemented in the projects that I was working</p>
+            <p>Then I start learning about <b>SOLID</b> principles which lead me to read the book <b>Clean Architecture</b> and learn more about this architecture</p>
+            <p>Actualy I keep studying some principles with <b>Domain Driven Design</b></p>
+            <p>Defining the system architecture is one of parts on software development that I enjoy working.</p>
+            p - missed Microservices / swagger
+        `,
+        "tags": ["IBM Internal" , "AEP"  , "AT&T" , "PLEX (NTT Data)" , "UBI" , "UBS" , "Cardinis Suite"]
     },
     { 
         "type": 'be',
         "name": "Java 8/11",
         "level": 4,
-        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-    },
-    { 
-        "type": 'be',
-        "name": "Spring boot",
-        "level": 4,
-        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        "content": `
+            <p>I used <b>Java</b> since the beginning of my carear in 2014 when I was Intern at GFT Brazil.</p>
+            <p>Since then I back to work with Java some times during my carear, my last experince was 2024 working also with Spring boot and Maven.</p>
+            <p>I Always look to keep studying new feature of the new versions of Java and Always study bit more about Java core concepts.</p>
+            <p>I am able to work with Java creating a new Api with <b>Spring boot</b> and <b>Maven</b>.</p>
+        `,
+        "tags": ["IBM Internal", "AT&T", "PLEX (NTT Data)", "UBI", "UBS", "Cardinis Suite"]
     },
     { 
         "type": 'be',
         "name": "NodeJs",
-        "level": 4,
-        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        "level": 5,
+        "content": `
+            <p>The main experience I had with <b>NodeJs 18</b> was working for AEP Projects developing microservices using the <b> Express</b> Framework.</p>
+            <p>Then I had an experience with <b>NestJs</b> Framework in a project o AT&T creating some endpoint and creating some database queries with <b>TypeORM</b></p>        
+            <p>Before it my first experience with NodeJs was at the Project PLEX (NTT Data), where I worked with the maintenance of the microservice designated to control user access, the experience was maintaining this service.</p>
+            <p>Working with NodeJs I had the oportunity to improve my skills with <b>Javascript</b> and <b>Typescript</b>.</p>
+        `,
+        "tags": ["AEP", "PLEX (NTT Data)"]
     },
 ]
