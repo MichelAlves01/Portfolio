@@ -1,6 +1,12 @@
+@use '../../../../../styles/styles.scss' as *;
+
 .skills {
     display: flex;
     flex-direction: column;
+
+    h2 {
+        text-align: center;
+    }
 
     .skills-list {
         display: flex;
@@ -90,22 +96,27 @@
 }
 
 .skill-view-mode {
-    display: flex;
-    flex-direction: row;
 
-    .skills-list {
+    .skills-container {
         display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-
-        .skill-selected {
-            filter: brightness(60%);
+        flex-direction: row;
+    
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+    
+            .skill-selected {
+                filter: brightness(60%);
+            }
+    
         }
-
     }
+
 }
 
-@media(max-width: 680px) {
+@media(max-width: $small-screen) {
     .skills {
         span {
             display: flex;
@@ -114,36 +125,39 @@
     }
 
     .skill-view-mode {
-        max-height: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .skills-list {   
-            div {
-                max-width: none;
-            }
-
-            .skill-mobile-view {
-                display: block;
-                height: auto;
-                padding: 0.5rem 0;
-                margin-bottom: 0.5rem;
-
-                nav {
-                    display: flex;
-                    flex-wrap: wrap;
+        .skills-container {
+            max-height: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            .skills-list {   
+                div {
+                    max-width: none;
+                }
+    
+                .skill-mobile-view {
+                    display: block;
+                    height: auto;
+                    padding: 0.5rem 0;
+                    margin-bottom: 0.5rem;
+    
+                    nav {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
                 }
             }
+    
+            .skill-pane {
+                display: none;
+            }
+        }
         }
 
-        .skill-pane {
-            display: none;
-        }
-    }
 }
 
-@media(min-width: 680px) {
+@media(min-width: $small-screen) {
     .skills-list {
         div {
             max-width: 15rem;
@@ -151,9 +165,12 @@
     }
 
     .skill-view-mode {
-        .skills-list {
-            padding: 1.8rem;
+        .skills-container {
+            .skills-list {
+                padding: 1.8rem;
+            }
         }
+
     }
     
 }

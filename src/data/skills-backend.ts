@@ -15,13 +15,6 @@ export const SkillsBackend: Array<Skill>  = [
     },
     { 
         "type": 'be',
-        "name": "APIs",
-        "level": 3,
-        "content": " / ",
-        "tags": ["UBI", "AEP", "AT&T"]
-    },
-    { 
-        "type": 'be',
         "name": "Python",
         "level": 1,
         "content": `

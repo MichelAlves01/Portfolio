@@ -1,10 +1,11 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Inject } from '@angular/core';
 import { skillsFrontend } from '../../../../../data/skills-frontend';
 import { SkillsBackend } from '../../../../../data/skills-backend';
 import { skillsOther } from '../../../../../data/skills-others';
 import { CommonModule } from '@angular/common';
 import { ProgressBarComponent } from "../../../../component/progress-bar/progress-bar.component";
 import { SelectedSkill, Skill } from './skill.component.model';
+import { MOBILE_MAX_WIDTH } from '../../../../app.constants';
 
 @Component({
     selector: 'app-skills',
@@ -17,13 +18,12 @@ export class SkillsComponent {
   frontendSkills: Array<Skill> = [];
   backendSkills: Array<Skill> = [];
   othersSkills: Array<Skill> = [];
-  showAllSkills: boolean = false;
   selectedSkill: SelectedSkill = new SelectedSkill(new Skill());
   emptySkill = new Skill();
   paneEffect = false;
+  isMobileDevice = false;
 
   ngOnInit() {
-    //this.showAllSkills = true;
     this.setupAllSkill();
     //this.selectedSkill = new SelectedSkill(this.backendSkills[2]);
   }
@@ -70,11 +70,6 @@ export class SkillsComponent {
     this.getOthersSkills();
   }
 
-  handleShowAllSkills() {
-    this.showAllSkills = !this.showAllSkills;
-    this.setupAllSkill();
-  }
-
   @HostListener("window:keydown", ['$event'])
   handleArrowDownEvent(event: KeyboardEvent) {
     event.preventDefault();
@@ -103,6 +98,16 @@ export class SkillsComponent {
 
   }
 
+  @HostListener("window:resize", ['$event'])
+  handleResizeEvent(event: any) {
+    this.setIsMobileDevice(event.target.innerWidth);
+  }
+
+  @HostListener("touchend", ['$event'])
+  handleWindowOnloadEvent(event: any) {
+    this.setIsMobileDevice(event.view.innerWidth);
+  }
+
   private updateSelectedSkillOnKeyDown(isArrayDownEvent: boolean, isArrayUpEvent: boolean, skills: Array<Skill>) {
     if (isArrayDownEvent) {
           const skillIndex = skills.indexOf(this.selectedSkill);
@@ -125,14 +130,18 @@ export class SkillsComponent {
 
   updateList(skillsList: Array<Skill>) {
     return skillsList
-          .slice(0, this.showAllSkills || this.selectedSkill.level > 0 ? skillsList.length : 5);
+          .slice(0, this.selectedSkill.level > 0 ? skillsList.length : 5);
   }
 
   filterList(skillsList: Array<Skill>) {
     return skillsList
           .sort((n1, n2) => n1.level - n2.level)
           .reverse()
-          .slice(0, this.showAllSkills || this.selectedSkill.level > 0 ? skillsList.length : 5);
+          .slice(0, this.selectedSkill.level > 0 ? skillsList.length : 5);
+  }
+
+  private setIsMobileDevice(width: number) {
+      this.isMobileDevice = width < MOBILE_MAX_WIDTH;
   }
 
 }

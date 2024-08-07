@@ -28,6 +28,10 @@ $large-screen: 1000px;
         padding: 0.4rem;
         text-align: justify;
 
+        .about-me-text {
+            font-size: large;
+        }
+
         .summary-links {
             display: flex;
             justify-content: end;

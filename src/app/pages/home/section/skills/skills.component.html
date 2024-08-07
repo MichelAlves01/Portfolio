@@ -1,99 +1,105 @@
 <section class="skills" [ngClass]="{'skill-view-mode': selectedSkill.level !== 0}">
-  <span class="skills-list">
-    <div *ngIf="this.selectedSkill.type === 'be' || this.selectedSkill.level === 0">
-      <header>
-        <h3>Backend Skills</h3>        
-        <button
-          *ngIf="selectedSkill.type === 'be'"
-          (click)="handleSkillSelection(this.selectedSkill)" 
-          aria-label="return"
-          tabindex="0">
-          <img src="assets/hide.png" class="color-schema">
-        </button>
-      </header>
-
-      <ul>
-        <li *ngFor="let skill of backendSkills">
-          <div (click)="handleSkillSelection(skill)" [ngClass]="{'skill-selected': selectedSkill.name === skill.name}">
-            <span>
-              <label class="title">{{ skill.name }}</label>
-              <label class="title">{{ skill.level + '/5' }}</label>
-            </span>
-            <app-progress-bar class="progress-bar" [level]="'level-' + skill.level"></app-progress-bar>
-            <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">
-              <ng-container *ngTemplateOutlet="skillContent"></ng-container>
+  <header>
+    <h2>Skills</h2>
+    <legend>Over these Years I have worked with many techonologies and I've acquire skill that desctibing a bit of these skills, click on the skill to know more. </legend>
+  </header>
+  <div class="skills-container">
+    <span class="skills-list">
+      <div *ngIf="this.selectedSkill.type === 'be' || this.selectedSkill.level === 0 || isMobileDevice">
+        <header>
+          <h3>Backend</h3>        
+          <button
+            *ngIf="selectedSkill.type === 'be' && !isMobileDevice"
+            (click)="handleSkillSelection(this.selectedSkill)" 
+            aria-label="return"
+            tabindex="0">
+            <img src="assets/hide.png" class="color-schema">
+          </button>
+        </header>
+  
+        <ul>
+          <li *ngFor="let skill of backendSkills">
+            <div (click)="handleSkillSelection(skill)" [ngClass]="{'skill-selected': selectedSkill.name === skill.name}">
+              <span>
+                <label class="title">{{ skill.name }}</label>
+                <label class="title">{{ skill.level + '/5' }}</label>
+              </span>
+              <app-progress-bar class="progress-bar" [level]="'level-' + skill.level"></app-progress-bar>
+              <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">
+                <ng-container *ngTemplateOutlet="skillContent"></ng-container>
+              </div>
             </div>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="this.selectedSkill.type === 'fe' || this.selectedSkill.level === 0 || isMobileDevice">
+        <header>
+          <h3>Frontend</h3>        
+          <button
+            *ngIf="selectedSkill.type === 'fe' && !isMobileDevice"
+            (click)="handleSkillSelection(this.selectedSkill)" 
+            aria-label="return"
+            tabindex="0">
+            <img src="assets/hide.png" class="color-schema">
+          </button>
+        </header>
+        <ul>
+          <li *ngFor="let skill of frontendSkills">
+            <div 
+              (click)="handleSkillSelection(skill)" 
+              [ngClass]="{'skill-selected': selectedSkill.name === skill.name}">
+              <span>
+                <label class="title">{{ skill.name }}</label>
+                <label class="title">{{ skill.level + '/5'}}</label>
+              </span>
+              <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>
+              <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">
+                <ng-container *ngTemplateOutlet="skillContent"></ng-container>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="this.selectedSkill.type === '*' || this.selectedSkill.level === 0 || isMobileDevice">
+        <header>
+          <h3>Other</h3> 
+          <button
+            *ngIf="selectedSkill.type === '*' && !isMobileDevice"
+            (click)="handleSkillSelection(this.selectedSkill)" 
+            aria-label="return"
+            tabindex="0">
+            <img src="assets/hide.png" class="color-schema">
+          </button>
+        </header>
+        <ul>
+          <li *ngFor="let skill of othersSkills">
+            <div (click)="handleSkillSelection(skill)" [ngClass]="{'skill-selected': selectedSkill.name === skill.name}">
+              <span>
+                <label class="title">{{ skill.name }}</label>
+                <label class="title">{{ skill.level + '/5' }}</label>
+              </span>
+              <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>
+              <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">
+                <ng-container *ngTemplateOutlet="skillContent"></ng-container>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </span>
+    <span class="skill-pane" *ngIf="selectedSkill.level !== 0">
+      <div>
+          <div class="pane-header">
+            <h3>{{ selectedSkill.name }}</h3>
           </div>
-        </li>
-      </ul>
-    </div>
-    <div *ngIf="this.selectedSkill.type === 'fe' || this.selectedSkill.level === 0">
-      <header>
-        <h3>Frontend Skills</h3>        
-        <button
-          *ngIf="selectedSkill.type === 'fe'"
-          (click)="handleSkillSelection(this.selectedSkill)" 
-          aria-label="return"
-          tabindex="0">
-          <img src="assets/hide.png" class="color-schema">
-        </button>
-      </header>
-      <ul>
-        <li *ngFor="let skill of frontendSkills">
-          <div 
-            (click)="handleSkillSelection(skill)" 
-            [ngClass]="{'skill-selected': selectedSkill.name === skill.name}">
-            <span>
-              <label class="title">{{ skill.name }}</label>
-              <label class="title">{{ skill.level + '/5'}}</label>
-            </span>
-            <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>
+  
+          <div class="skill-content" [ngClass]="{'pane': paneEffect}">
+            <ng-container *ngTemplateOutlet="skillContent"></ng-container>
           </div>
-        </li>
-      </ul>
-    </div>
-    <div *ngIf="this.selectedSkill.type === '*' || this.selectedSkill.level === 0">
-      <header>
-        <h3>Other Skills</h3> 
-        <button
-          *ngIf="selectedSkill.type === '*'"
-          (click)="handleSkillSelection(this.selectedSkill)" 
-          aria-label="return"
-          tabindex="0">
-          <img src="assets/hide.png" class="color-schema">
-        </button>
-      </header>
-      <ul>
-        <li *ngFor="let skill of othersSkills">
-          <div (click)="handleSkillSelection(skill)" [ngClass]="{'skill-selected': selectedSkill.name === skill.name}">
-            <span>
-              <label class="title">{{ skill.name }}</label>
-              <label class="title">{{ skill.level + '/5' }}</label>
-            </span>
-            <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </span>
-  <span class="skill-pane">
-    <div>
-        <div class="pane-header">
-          <h3>{{ selectedSkill.name }}</h3>
-        </div>
+      </div>
+    </span>
+  </div>
 
-        <div class="skill-content" *ngIf="selectedSkill.level !== 0" [ngClass]="{'pane': paneEffect}">
-          <ng-container *ngTemplateOutlet="skillContent"></ng-container>
-        </div>
-    </div>
-  </span>
-  <button 
-    *ngIf="selectedSkill.level === 0"
-    (click)="handleShowAllSkills()" 
-    tabindex="0" 
-    role="button">
-      {{ showAllSkills ? "show less" : "show all" }}
-  </button>
 </section>
 
 <ng-template #skillContent>
