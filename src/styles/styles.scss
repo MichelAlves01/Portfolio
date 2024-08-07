@@ -13,6 +13,7 @@ body {
 main {
     @include color-scheme($light-theme...);
     font-family: 'Segoe UI', Tahoma, sans-serif;
+    overflow: hidden;
 
     section {
         border: 2px;

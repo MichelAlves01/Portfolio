@@ -42,3 +42,10 @@
     }
 
 }
+
+@media(min-width: $large-screen) {
+    .main {
+        max-width: 80vw;
+        margin: auto;
+    }
+}

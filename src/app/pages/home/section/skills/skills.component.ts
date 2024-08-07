@@ -44,7 +44,7 @@ export class SkillsComponent {
       this.setPaneEffect();
 
       if (skill.name === this.selectedSkill.name) {
-        this.selectedSkill = new SelectedSkill(skill);
+        this.selectedSkill = new SelectedSkill(new Skill());
         this.setupAllSkill();
       } else {
         const prevSkill = this.selectedSkill;
@@ -105,16 +105,22 @@ export class SkillsComponent {
 
   private updateSelectedSkillOnKeyDown(isArrayDownEvent: boolean, isArrayUpEvent: boolean, skills: Array<Skill>) {
     if (isArrayDownEvent) {
-        const skillIndex = skills.indexOf(this.selectedSkill);
-        const nextSkill = skills[skillIndex + 1];
-        if (nextSkill.name !== this.selectedSkill.name) this.setPaneEffect();
-        this.selectedSkill = new SelectedSkill(nextSkill) || this.selectedSkill;
-    } else if (isArrayUpEvent) {
-        const skillIndex = skills.indexOf(this.selectedSkill);
-        const prevSkill = skills[skillIndex - 1];
-        if (prevSkill.name !== this.selectedSkill.name) this.setPaneEffect();
-        this.selectedSkill = new SelectedSkill(prevSkill) || this.selectedSkill;
-    }
+          const skillIndex = skills.indexOf(this.selectedSkill);
+          const nextSkill = skills[skillIndex + 1];
+        
+          if (nextSkill.name !== this.selectedSkill.name) { 
+            this.setPaneEffect();
+          }
+          this.selectedSkill = new SelectedSkill(nextSkill) || this.selectedSkill;
+        } else if (isArrayUpEvent) {
+          const skillIndex = skills.indexOf(this.selectedSkill);
+          const prevSkill = skills[skillIndex - 1];
+          
+          if (prevSkill.name !== this.selectedSkill.name) {
+            this.setPaneEffect();
+          }
+          this.selectedSkill = new SelectedSkill(prevSkill) || this.selectedSkill;
+        }
   }
 
   updateList(skillsList: Array<Skill>) {

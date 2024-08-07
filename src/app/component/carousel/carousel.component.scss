@@ -60,15 +60,15 @@
         }
 
         button {
-            background-color: transparent;
+            background-color: #49475f8a;
             width: 3rem;
             padding: 0 0.2rem;
             height: 2rem;
-            filter: invert(71%) sepia(0%) saturate(0%) hue-rotate(87deg) brightness(63%) contrast(60%);
             border: 0;
 
             img {
                 max-height: 2rem;
+                filter: invert(100%) sepia(38%) saturate(47%) hue-rotate(87deg) brightness(80%) contrast(90%);
             }
         }
 
@@ -102,6 +102,7 @@
 
             img {
                 max-height: 2rem;
+                filter: invert(71%) sepia(0%) saturate(0%) hue-rotate(87deg) brightness(63%) contrast(60%);
             }
         }
 
@@ -124,6 +125,7 @@
 
             img {
                 max-height: 2rem;
+                filter: invert(71%) sepia(0%) saturate(0%) hue-rotate(87deg) brightness(63%) contrast(60%);
             }
         }
     }
