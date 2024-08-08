@@ -26,7 +26,6 @@ header {
         button {
             border-radius: 0.6rem;
             padding: 0.2rem 1rem;
-            font-size: 0;
         }
     
   
@@ -37,16 +36,4 @@ footer {
     text-align: center;
     position: relative;
     bottom: 0;
-}
-
-@media(min-width: $small-screen) {
-    header {
-        max-width: 78vw;
-        margin: auto;
-        .menu {
-            button {
-                font-size: smaller;
-            }
-        }
-    }
 }

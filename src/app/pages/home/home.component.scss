@@ -1,9 +1,7 @@
 @use '../../../styles/colors.scss' as *;
+@use '../../../styles/styles.scss' as *;
 
 $sections-gap: 0.6rem;
-$small-screen: 480px;
-$middle-screen: 680px;
-$large-screen: 1000px;
 
 .main {
     display: flex;
@@ -13,10 +11,12 @@ $large-screen: 1000px;
     #personal-information {
         display: flex;
         flex-direction: column;
+        text-align: center;
         flex-wrap: wrap;
         padding: 1.5rem 0;
         align-items: center;
         gap: $sections-gap;
+        min-width: 25vw;
     
         .profile-photo img {
             height: 10rem;
@@ -41,7 +41,7 @@ $large-screen: 1000px;
     }
 }
 
-@media(max-width: $middle-screen) {
+@media (max-width: $small-screen) {
     .summary-info {
         display: flex;
         flex-direction: column;
@@ -60,7 +60,7 @@ $large-screen: 1000px;
     }
 }
 
-@media(min-width: $middle-screen) and (max-width: $large-screen) {
+@media (min-width: $small-screen) and (max-width: $large-screen) {
     .summary-info {
         display: grid;
         grid-template-columns: 25% 75%;
@@ -75,7 +75,6 @@ $large-screen: 1000px;
 
 @media(min-width: $large-screen) {
     .main {
-        max-width: 80vw;
         margin: auto;
 
         .summary-info {

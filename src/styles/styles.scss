@@ -164,7 +164,17 @@ main.dark {
 }
 
 
-@media(max-width: $middle-screen) {
+@media (max-width: $small-screen) {
+    header {
+        max-width: 100vw;
+        margin: auto;
+
+        .menu {
+            button {
+                font-size: 0;
+            }
+        }
+    }
     main {
         min-height: 100vh;
         section {
@@ -174,10 +184,21 @@ main.dark {
     }
 }
 
-@media(min-width: $middle-screen) and (max-width: $large-screen) {
+@media (min-width: $small-screen) and (max-width: $large-screen) {
+    header {
+        max-width: 100vw;
+        margin: auto;
+        .menu {
+            button {
+                font-size: smaller;
+            }
+        }
+    }
+
     main {
         min-height: 100vh;
         section {
+            max-width: 100vw;
             padding: 1.5rem;
             margin: auto;
         }
@@ -187,7 +208,7 @@ main.dark {
 
 @media(min-width: $large-screen) {
     header {
-        max-width: 78vw;
+        max-width: 80vw;
         margin: auto;
         .menu {
             button {
