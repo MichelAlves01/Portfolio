@@ -50,6 +50,13 @@ section {
         }
     }
 
+    .time-switcher {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
     .cv-options {
         display: flex;
         gap: 1rem;

@@ -10,6 +10,7 @@ export class GlobalService {
 
     public switchColorSchema = new BehaviorSubject<Settings>({
         theme: 'light',
+        timeTheme: 'retro',
         language: Languages.EN
     });
 }

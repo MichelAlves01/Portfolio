@@ -1,0 +1,24 @@
+@use './colors' as *;
+
+.progress-bar {
+    background-color: $dark-300;
+    border: 1px solid $blue-800;
+    border-radius: 0.25rem;
+    
+    .level {
+        background-color: $blue-800;
+        height: 18px;
+    }
+}
+
+.progress-bar.retro {
+    background-color: $dark-300;
+    border: 2px solid $dark-000;
+    height: 1.5rem;
+    border-radius: 0;
+    
+    .level {
+        background-color: $blue-R00;
+        height: 1.5rem;
+    }
+}

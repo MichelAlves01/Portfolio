@@ -15,6 +15,7 @@ export class AppComponent {
   title = 'Portfolio';
   isDarkTheme = false;
   language = 'En';
+  timeTheme = 'normal';
   tabs = ['', 'projects', 'settings']
   selectedTab = '';
   mousePositionStart = 0;
@@ -24,6 +25,7 @@ export class AppComponent {
     this.globalService.switchColorSchema.subscribe({
       next: newValue => { 
         this.isDarkTheme = newValue.theme === 'dark';
+        this.timeTheme = newValue.timeTheme;
         this.language = newValue.language === Languages.EN ? 'En' : 'Pt';
       }
     })
@@ -60,9 +62,5 @@ export class AppComponent {
       if (selectedTabIndex > 0) this.selectedTab = this.tabs[selectedTabIndex-1];
       this.router.navigateByUrl(this.selectedTab);
     }
-  }
-
-  onUrlChange(event: EventListener) {
-
   }
 }

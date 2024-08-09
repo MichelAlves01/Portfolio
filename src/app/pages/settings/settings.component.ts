@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { GlobalService } from '../../service/global.service';
-import { Languages, Settings, defaultSettings } from './settings.component.model';
+import { Languages, Settings, defaultSettings, timeThemeType } from './settings.component.model';
 
 @Component({
   selector: 'app-settings',
@@ -16,6 +16,24 @@ export class SettingsComponent {
 
   changeColor() {
     this.settings.theme = this.settings.theme === 'light' ? 'dark' : 'light';
+    this.settings.timeTheme = 'normal';
+    this.globalService.switchColorSchema.next({
+      ...this.settings
+    })
+  }
+
+  changeTimeTheme(selectedTheme: timeThemeType) {
+    this.settings.timeTheme = selectedTheme;
+    switch (this.settings.timeTheme) {
+      case 'retro': 
+        this.settings.theme = 'light';
+        break;
+      case 'cyberpunk':
+        this.settings.theme = 'dark';
+        break;
+      default:
+        this.settings.theme = 'light';
+    }
     this.globalService.switchColorSchema.next({
       ...this.settings
     })

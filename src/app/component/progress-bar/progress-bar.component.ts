@@ -10,4 +10,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ProgressBarComponent {
   @Input() level: string | undefined;
+  @Input() theme: string | undefined;
 }
