@@ -35,35 +35,32 @@
         </article>
 
         <article class="project">
-            <header>
-                <h3>Project 2</h3>
+            <header class="project-header">
+                <h3>Tic Tac Toe</h3>
                 <nav>
                     <div class="tag">live</div>
                     <div class="tag">Complete</div>
                 </nav>
             </header>
-            <legend>this project has this legend</legend>
+            <legend>This is a simple game developed with React JS</legend>
             <div class="project-content">
-                <app-carousel [slides]="slides"></app-carousel>
+                <iframe src="https://michelalves01.github.io/tic-tac-toe/" description=""></iframe>
             </div>
             <div class="project-links">
                 <button
                     class="link-button"
+                    (click)="handleNavigateTo('https://michelalves01.github.io/tic-tac-toe/')"
                     aria-label="Check my linkedin page"
                     tabindex="0">
                     Open live
                 </button>
                 <button
                     class="link-button"
+                    (click)="handleNavigateTo('https://github.com/MichelAlves01/tic-tac-toe')"
+                    
                     aria-label="Check my linkedin page"
                     tabindex="0">
                         Open GitHub
-                </button>
-                <button
-                    class="link-button"
-                    aria-label="Check my linkedin page"
-                    tabindex="0">
-                    Open Technical Doc
                 </button>
             </div>
         </article>
