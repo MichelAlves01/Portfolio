@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { ProgressBarComponent } from "../../../../component/progress-bar/progress-bar.component";
 import { SelectedSkill, Skill } from './skill.component.model';
 import { MOBILE_MAX_WIDTH } from '../../../../app.constants';
+import { timeThemeType } from '../../../settings/settings.component.model';
+import { GlobalService } from '../../../../service/global.service';
 
 @Component({
     selector: 'app-skills',
@@ -22,6 +24,16 @@ export class SkillsComponent {
   emptySkill = new Skill();
   paneEffect = false;
   isMobileDevice = false;
+  timeTheme: timeThemeType = 'normal';
+
+  constructor(private globalService: GlobalService) {
+    this.globalService.switchColorSchema.subscribe({
+      next: newValue => { 
+        this.timeTheme = newValue.timeTheme;
+      }
+    })
+  }
+
 
   ngOnInit() {
     this.setupAllSkill();

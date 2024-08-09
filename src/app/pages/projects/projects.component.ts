@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CarouselComponent } from '../../component/carousel/carousel.component';
 import { Slide } from '../../component/carousel/carousel.component.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
@@ -14,7 +15,7 @@ export class ProjectsComponent {
 
   slides: Array<Slide>;
 
-  constructor() {
+  constructor(private router: Router) {
     this.slides = [
       {
         legend: 'First image',
@@ -32,6 +33,11 @@ export class ProjectsComponent {
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
       }
     ]
+  }
+
+  handleNavigateTo(url: string) {
+    //this.router.navigateByUrl(url);
+    window.open(url, '_blank');
   }
 
 }

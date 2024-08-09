@@ -1,5 +1,6 @@
 @use './reset.scss' as *;
 @use './colors' as *;
+@use './components.scss' as *;
 
 $sections-gap: 0.6rem;
 $small-screen: 767px;
@@ -25,6 +26,7 @@ main {
     button {
         @include color-scheme($light-button-schema...);
         cursor: pointer;
+        border-radius: 0.6rem;
     }
 
     button.selected {
@@ -114,7 +116,7 @@ main.dark {
     }
 
     button {
-        @include color-scheme($dark-button-schema...)
+        @include color-scheme($dark-button-schema...);
     }
 
     button.selected {
@@ -161,6 +163,66 @@ main.dark {
     .project {
         @include color-scheme($dark-card-schema...)
     }
+}
+
+main.retro {
+    @include color-scheme($retro-light-theme...);
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+
+    section {
+        @include color-scheme($retro-light-card-schema...);
+        border-width: 0.2rem;
+
+        .profile-photo {
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+            img {
+                border: 2px solid $dark-000;
+            }
+        }
+    }
+
+    .project {
+        @include color-scheme($retro-light-card-schema...);
+        border-width: 0.2rem;
+    }
+
+    button {
+        border: 1px solid $dark-000;
+        height: 2rem;
+        border-radius: 50px;
+    }
+
+    button.selected {
+        @include color-scheme($retro-light-button-selected-schema...);
+    }
+
+    .tag {
+        background-color: #ffc04f;
+        border: 1px solid $dark-000;
+    }
+
+    #sectors-x {
+        span {
+            gap: 2rem;
+            .sector {
+                border: 2PX solid $dark-000;
+
+                box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+            }
+        }
+
+
+    }
+
+
+
 }
 
 

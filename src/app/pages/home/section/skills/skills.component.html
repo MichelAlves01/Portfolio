@@ -24,7 +24,7 @@
                 <label class="title">{{ skill.name }}</label>
                 <label class="title">{{ skill.level + '/5' }}</label>
               </span>
-              <app-progress-bar class="progress-bar" [level]="'level-' + skill.level"></app-progress-bar>
+              <app-progress-bar [level]="'level-' + skill.level" [theme]="timeTheme"></app-progress-bar>
               <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">
                 <ng-container *ngTemplateOutlet="skillContent"></ng-container>
               </div>
@@ -52,7 +52,7 @@
                 <label class="title">{{ skill.name }}</label>
                 <label class="title">{{ skill.level + '/5'}}</label>
               </span>
-              <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>
+              <app-progress-bar [level]="'level-' + skill.level" [theme]="timeTheme"></app-progress-bar>
               <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">
                 <ng-container *ngTemplateOutlet="skillContent"></ng-container>
               </div>
@@ -78,7 +78,7 @@
                 <label class="title">{{ skill.name }}</label>
                 <label class="title">{{ skill.level + '/5' }}</label>
               </span>
-              <app-progress-bar [level]="'level-' + skill.level"></app-progress-bar>
+              <app-progress-bar [level]="'level-' + skill.level" [theme]="timeTheme"></app-progress-bar>
               <div class="skill-mobile-view" *ngIf="selectedSkill.name === skill.name">
                 <ng-container *ngTemplateOutlet="skillContent"></ng-container>
               </div>

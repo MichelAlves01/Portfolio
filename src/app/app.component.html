@@ -1,4 +1,4 @@
-<main  [ngClass]="{'dark': isDarkTheme}">
+<main [ngClass]="{'dark': isDarkTheme, 'retro': timeTheme === 'retro', 'cyberpunk': timeTheme === 'cyberpunk'}">
   <header>
     <span (click)="changeTab('settings')">{{ language }}</span>   
     <span class="menu">

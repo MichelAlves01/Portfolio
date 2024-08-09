@@ -6,6 +6,23 @@
             <label for="switch">Toggle</label>
             <span>{{ this.settings.theme[0].toUpperCase() +  this.settings.theme.slice(1) }}</span>
         </fieldset>
+
+        <fieldset class="time-switcher">
+            <legend>Time Switcher</legend>
+            <div>
+                <input type="radio" name="time" (click)="changeTimeTheme('retro')" id="retro" [checked]="settings.timeTheme === 'retro'">
+                <label for="retro">Retro</label>
+            </div>
+            <div>
+                <input type="radio" name="time" (click)="changeTimeTheme('normal')" id="normal" [checked]="settings.timeTheme === 'normal'">
+                <label for="normal">Normal</label>
+            </div>
+            <div>
+                <input type="radio" name="time" (click)="changeTimeTheme('cyberpunk')" id="cyberpunk" [checked]="settings.timeTheme === 'cyberpunk'">
+                <label for="cyberpunk">Cyber Punk</label>
+            </div>
+        </fieldset>
+
         <fieldset class="language-select">
             <legend>Language Options</legend>
             <div class="input-select">
