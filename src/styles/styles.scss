@@ -193,7 +193,6 @@ main.retro {
 
     button {
         border: 1px solid $dark-000;
-        height: 2rem;
         border-radius: 50px;
     }
 
@@ -217,12 +216,98 @@ main.retro {
                 -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
             }
         }
+    }
 
+    .color-schema {
+        filter: none;
+    }
+}
+
+main.cyberpunk {
+    @include color-scheme($cyberpunk-dark-theme...);
+    font-family: "Monda", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    background-image: url('../assets/cyberpunk.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+
+    section {
+        @include color-scheme($cyberpunk-dark-card-schema...);
+        border-width: 0.5px;
+        border-radius: 0;
+
+        .profile-photo {
+            -webkit-filter: sepia(100%) hue-rotate(190deg) saturate(500%); /* Safari 6.0 - 9.0 */
+            filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+            img {
+                border: 2px solid $dark-000;
+            }
+        }
+
+        fieldset {
+            @include color-scheme($cyberpunk-dark-card-schema...);
+            padding: 2rem 1rem;
+        }
+    }
+
+    p {
+        color: $cyber-700;
+    }
+
+    h1,h2,h3 {
+        text-transform: uppercase;
+        font-weight: 200;
+    }
+
+    .project {
+        @include color-scheme($cyberpunk-dark-card-schema...);
+        border-width: 0.2rem;
+    }
+
+    button {
+        @include color-scheme($cyberpunk-dark-card-schema...);
+        border-radius: 0;
+    }
+
+    button.selected {
+        @include color-scheme($cyberpunk-dark-button-theme...);
+        background-color: $dark-000;
+    }
+
+    .link-button, .download-button {
+        height: 2rem;
+        padding: 0 20px;
+        @include color-scheme($cyberpunk-dark-button-theme...);
+        border-radius: 0;
+        text-transform: uppercase;
+        color: $blue-100;
+        font-weight: 400;
 
     }
 
+    .link-button:hover, .download-button:hover {
+        @include color-scheme($cyberpunk-dark-button-theme...);
+    }
 
+    .tag {
+        @include color-scheme($cyberpunk-dark-tag-schema...);
+        border-radius: 0;
+    }
 
+    #sectors-x {
+        span {
+            gap: 2rem;
+            .sector {
+                border: 2PX solid $cyber-700-Opacity;
+            }
+        }
+    }
+    .color-schema {
+        height: 1.5rem;
+        filter: invert(100%);
+    }
 }
 
 

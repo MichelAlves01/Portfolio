@@ -22,3 +22,25 @@
         height: 1.5rem;
     }
 }
+
+.progress-bar.cyberpunk {
+    background-color: $dark-500;
+    border: 2px solid $cyber-700-Opacity;
+    height: 1.5rem;
+    border-radius: 0;
+    
+    .level {
+        background-color: $yellow-300;
+        height: 1.5rem;
+    }
+}
+
+.carousel.cyberpunk {
+    .slide-index {
+        border: 0;
+    }
+    
+    .slide-index-selected {
+        border: 0;
+    }
+}

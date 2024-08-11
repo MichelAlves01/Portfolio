@@ -7,8 +7,10 @@
       <button (click)="changeTab('settings')" [ngClass]="{'selected': selectedTab === 'settings'}">Settings</button>
     </span>
     <span (click)="changeTab('settings')">
-        <img *ngIf="!isDarkTheme" src="assets/brightness.png" class="color-schema">
-        <img *ngIf="isDarkTheme" src="assets/night-mode.png" class="color-schema">
+        <img *ngIf="!isDarkTheme && timeTheme === 'normal'" src="assets/brightness.png" class="color-schema">
+        <img *ngIf="isDarkTheme && timeTheme === 'normal'" src="assets/night-mode.png" class="color-schema">
+        <img *ngIf="timeTheme === 'retro'" src="assets/gamer.png" class="color-schema">
+        <img *ngIf="timeTheme === 'cyberpunk'" src="assets/robot.png" class="color-schema">
     </span>
   </header>
   
