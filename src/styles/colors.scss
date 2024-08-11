@@ -16,7 +16,16 @@ $blue-800: #322c69;
 $blue-900: #212031;
 $blue-R00: #0f00dd;
 
-$yellow-600: #ffc04f; 
+$cyber-700: #53aa95;
+$cyber-700-Opacity: #53aa954f;
+$cyber-900: #152a25;
+
+$yellow-300: #f9f465;
+$yellow-600: #ffc04f;
+$yellow-900: #f5951a;
+$yellow-900-opacity: #f5951a2e;
+
+
 
 $light-theme: $dark-900, $dark-200, $dark-100;
 $dark-theme: $dark-400, $dark-900, $dark-700;
@@ -49,3 +58,13 @@ $retro-light-card-schema: $dark-600, $dark-100, $dark-000;
 $retro-light-button-selected-schema: $dark-100, $blue-500, $dark-900;
 
 $retro-light-tag-theme: $dark-000, $blue-400, $dark-000;
+
+
+/* Cyber Punk Theme */
+$cyberpunk-dark-theme: $dark-100, $dark-000, $dark-000;
+
+$cyberpunk-dark-card-schema: $dark-100, $dark-000, $cyber-700-Opacity;
+
+$cyberpunk-dark-tag-schema: $dark-100, $cyber-700-Opacity, $cyber-900;
+
+$cyberpunk-dark-button-theme: $dark-100, $yellow-900-opacity, $yellow-300;

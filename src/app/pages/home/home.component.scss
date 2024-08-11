@@ -63,7 +63,7 @@ $sections-gap: 0.6rem;
 @media (min-width: $small-screen) and (max-width: $large-screen) {
     .summary-info {
         display: grid;
-        grid-template-columns: 25% 75%;
+        grid-template-columns: 30% 70%;
 
         .about-me {
             padding-right: 7%;
@@ -79,7 +79,7 @@ $sections-gap: 0.6rem;
 
         .summary-info {
             display: grid;
-            grid-template-columns: 25% 75%;
+            grid-template-columns: 30% 70%;
 
             .about-me {
                 padding-right: 7%;

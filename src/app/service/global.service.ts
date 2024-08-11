@@ -9,8 +9,8 @@ import { InjectionToken } from "@angular/core";
 export class GlobalService {
 
     public switchColorSchema = new BehaviorSubject<Settings>({
-        theme: 'light',
-        timeTheme: 'retro',
+        theme: 'dark',
+        timeTheme: 'cyberpunk',
         language: Languages.EN
     });
 }
