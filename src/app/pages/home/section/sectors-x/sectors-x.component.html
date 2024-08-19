@@ -7,9 +7,9 @@
             <span>
                 {{ sector.description }}
 
-                <nav>
-                    <div class="tag">AEP</div>
-                    <div class="tag">AEP</div>
+                <nav *ngFor="let company of sector.tags">
+                    <div class="tag">{{ company }}</div>
+                    
                 </nav>
 
             </span>

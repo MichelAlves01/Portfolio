@@ -13,7 +13,6 @@ body {
 }
 main {
     @include color-scheme($light-theme...);
-    font-family: 'Segoe UI', Tahoma, sans-serif;
     overflow: hidden;
 
     section {
@@ -173,6 +172,16 @@ main.retro {
     font-style: normal;
     text-transform: uppercase;
 
+    p {
+        text-transform: none;
+ 
+        font-style: normal;
+    }
+
+    h1, h2, h3, h4 {
+        font-size: x-large
+    }
+
     section {
         @include color-scheme($retro-light-card-schema...);
         border-width: 0.2rem;
@@ -252,13 +261,10 @@ main.cyberpunk {
         }
     }
 
-    p {
-        color: $cyber-700;
-    }
-
     h1,h2,h3 {
         text-transform: uppercase;
         font-weight: 200;
+        color: $cyber-700;
     }
 
     .project {
@@ -298,7 +304,7 @@ main.cyberpunk {
 
     #sectors-x {
         span {
-            gap: 2rem;
+            gap: 1rem;
             .sector {
                 border: 2PX solid $cyber-700-Opacity;
             }
