@@ -35,6 +35,8 @@
             nav {
                 display: flex;
                 justify-content: center;
+                flex-direction: row;
+                flex-wrap: wrap;
                 width: -webkit-fill-available;
             }
         }

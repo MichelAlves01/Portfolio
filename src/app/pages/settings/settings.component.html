@@ -2,7 +2,7 @@
     <section>
         <fieldset class="theme-switcher">
             <legend>Theme Switcher</legend>
-            <input type="checkbox" id="switch" (click)="changeColor()" [checked]="settings.theme === 'dark'"/>
+            <input type="checkbox" id="switch" (click)="changeColor()" [checked]="settings.theme === 'dark'" [disabled]="settings.timeTheme === 'retro' || settings.timeTheme === 'cyberpunk'"/>
             <label for="switch">Toggle</label>
             <span>{{ this.settings.theme[0].toUpperCase() +  this.settings.theme.slice(1) }}</span>
         </fieldset>

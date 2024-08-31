@@ -5,11 +5,13 @@
             <img [src]="sector.icon" alt="">
             <label for="">{{ sector.name }}</label>
             <span>
-                {{ sector.description }}
+                <span><p [innerHTML]="sector.description"></p></span>
 
-                <nav *ngFor="let company of sector.tags">
-                    <div class="tag">{{ company }}</div>
-                    
+
+                <nav>
+                    <ng-container *ngFor="let company of sector.tags">
+                        <div class="tag">{{ company }}</div>
+                    </ng-container>
                 </nav>
 
             </span>
