@@ -1,26 +1,33 @@
 <div class="main">
     <section>
-        <fieldset class="theme-switcher">
-            <legend>Theme Switcher</legend>
-            <input type="checkbox" id="switch" (click)="changeColor()" [checked]="settings.theme === 'dark'" [disabled]="settings.timeTheme === 'retro' || settings.timeTheme === 'cyberpunk'"/>
-            <label for="switch">Toggle</label>
-            <span>{{ this.settings.theme[0].toUpperCase() +  this.settings.theme.slice(1) }}</span>
-        </fieldset>
 
-        <fieldset class="time-switcher">
-            <legend>Time Switcher</legend>
+
+        <fieldset >
+                        <legend>Time Switcher</legend>
+            <div class="time-switcher">
             <div>
                 <input type="radio" name="time" (click)="changeTimeTheme('retro')" id="retro" [checked]="settings.timeTheme === 'retro'">
                 <label for="retro">Retro</label>
             </div>
             <div>
                 <input type="radio" name="time" (click)="changeTimeTheme('normal')" id="normal" [checked]="settings.timeTheme === 'normal'">
-                <label for="normal">Normal</label>
+                <label for="normal">Default</label>
+
+
+
             </div>
             <div>
                 <input type="radio" name="time" (click)="changeTimeTheme('cyberpunk')" id="cyberpunk" [checked]="settings.timeTheme === 'cyberpunk'">
-                <label for="cyberpunk">Cyber Punk</label>
+                <label for="cyberpunk">Cyber Portfolio</label>
             </div>
+            </div>
+
+                        <div class="theme-switcher" *ngIf="settings.timeTheme === 'normal'">
+                <input type="checkbox" id="switch" (click)="changeColor()" [checked]="settings.theme === 'dark'" />
+                <label for="switch">Toggle</label>
+                <span>{{ this.settings.theme[0].toUpperCase() +  this.settings.theme.slice(1) }}</span>
+                        </div>
+            
         </fieldset>
 
         <fieldset class="language-select">

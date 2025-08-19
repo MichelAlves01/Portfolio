@@ -10,8 +10,8 @@ section {
     // used reference https://codepen.io/mburnette/pen/LxNxNg
     .theme-switcher {
         display: flex;
-        gap: 0.5rem;
         align-items: center;
+        margin-top: 1rem;
 
         input[type=checkbox]{
             height: 0;

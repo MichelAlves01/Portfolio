@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { GlobalService } from '../../service/global.service';
 import { Languages, Settings, defaultSettings, timeThemeType } from './settings.component.model';
 
 @Component({
   selector: 'app-settings',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.scss'
 })

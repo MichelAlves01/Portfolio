@@ -1,4 +1,6 @@
 [] update readme file
+[] add CVs to download
+[] move theme switch below and display only when default
 [x] color pallete
 [] multi-language pt-br - en-us
 [x] modal to view details for - not used modal
