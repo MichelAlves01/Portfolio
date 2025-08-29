@@ -3,7 +3,9 @@
       <div id="personal-information">
         <span>
           <div class="profile-photo">
-            <img src="assets/my-profile-photo.jpg" alt="my profile photo">
+            <img *ngIf="timeTheme && timeTheme === 'normal'" src="assets/my-profile-photo.jpg" alt="my profile photo">
+            <img *ngIf="timeTheme === 'retro'"  src="assets/my-profile-photo-retro.png" alt="my profile photo">
+            <img *ngIf="timeTheme === 'cyberpunk'" src="assets/my-profile-photo-cp.png" alt="my profile photo">
           </div>
           <div class="job-title">
             <h1>Michel Alves</h1>

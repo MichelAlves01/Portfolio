@@ -187,8 +187,8 @@ main.retro {
         border-width: 0.2rem;
 
         .profile-photo {
-            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-            filter: grayscale(100%);
+            //-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            //filter: grayscale(100%);
             img {
                 border: 2px solid $dark-000;
             }
@@ -248,8 +248,8 @@ main.cyberpunk {
         border-radius: 0;
 
         .profile-photo {
-            -webkit-filter: sepia(100%) hue-rotate(190deg) saturate(500%); /* Safari 6.0 - 9.0 */
-            filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+            //-webkit-filter: sepia(100%) hue-rotate(190deg) saturate(500%); /* Safari 6.0 - 9.0 */
+            //filter: sepia(100%) hue-rotate(190deg) saturate(500%);
             img {
                 border: 2px solid $dark-000;
             }
