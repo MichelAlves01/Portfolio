@@ -1,4 +1,4 @@
-export type CompanyTags = "" | "IBM Internal" | "AEP"  | "AT&T" | "PLEX (NTT Data)" | "Nextier" | "UBI" | "UBS" | "Cardinis Suite";
+export type CompanyTags = "" | "IBM Internal" | "AEP"  | "AT&T" | "PLEX (NTT Data)" | "Nextier" | "UBI Banca" | "UBS" | "Cardinis Suite";
 export class Company {
     name: CompanyTags;
     shortDescription: string;
@@ -17,7 +17,7 @@ export const companies: Map<CompanyTags, Company> = new Map([
     ['AT&T', { name: "AT&T", shortDescription: "AT&T Communication company", yearOfExperience: "2022" }],
     ['PLEX (NTT Data)', { name: "PLEX (NTT Data)", shortDescription: "NTTData PLEX (NTT Data) (project phigital experience)", yearOfExperience: "2021"}],
     ['Nextier', { name: "Nextier", shortDescription: "Nextier Oil Field Solutions", yearOfExperience: "2020"}],
-    ['UBI', { name: "UBI", shortDescription: "UBI bank", yearOfExperience: "2019"}],
+    ['UBI Banca', { name: "UBI Banca", shortDescription: "UBI banca", yearOfExperience: "2019"}],
     ['UBS', { name: "UBS", shortDescription: "UBS bank", yearOfExperience: "2017"}],
     ['Cardinis Suite', { name: "Cardinis Suite", shortDescription: "Software from GFT Italy", yearOfExperience: "2017"}],
 ]);

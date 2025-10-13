@@ -11,7 +11,7 @@ export const sectorsX: Array<Sector> = [
         name: "Finantial",
         icon: "assets/banco.png",
         description: "I have extensive experience working with major banks in the financial sector, where I gained a strong understanding of the industry's demands and the high standards of work quality required.",
-        tags: ["UBS", "UBI"]
+        tags: ["UBS", "UBI Banca"]
     },
     {
         name: "Oil sector",

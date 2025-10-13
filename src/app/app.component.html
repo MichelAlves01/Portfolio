@@ -1,5 +1,5 @@
 <main [ngClass]="{'dark': isDarkTheme, 'retro': timeTheme === 'retro', 'cyberpunk': timeTheme === 'cyberpunk'}">
-  <header *ngIf="true">
+  <header *ngIf="false">
     <span (click)="changeTab('settings')">{{ language }}</span>   
     <span class="menu">
       <button (click)="changeTab('')" [ngClass]="{'selected': selectedTab === ''}">Home</button>

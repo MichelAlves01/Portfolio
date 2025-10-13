@@ -23,7 +23,7 @@ export const skillsFrontend: Array<Skill> = [
             <p>Additionally, I have extensive experience using SASS, a powerful CSS preprocessor that allows me to write more efficient and organized stylesheets. With SASS, I can use features like variables, nested rules, mixins, and functions to streamline my workflow and create modular, reusable code. This has been particularly useful in large projects where maintaining a consistent design system is crucial.</p>
             <p>By combining HTML, CSS, and SASS, I am able to build web interfaces that are not only visually appealing but also robust and maintainable. I continuously explore new techniques and stay updated with the latest advancements to ensure that my work meets the highest standards of modern web development.</p>
         `,
-        "tags": ["IBM Internal", "AT&T", "PLEX (NTT Data)", "Nextier", "UBS", "UBI", "Cardinis Suite"]
+        "tags": ["IBM Internal", "AT&T", "PLEX (NTT Data)", "Nextier", "UBS", "UBI Banca", "Cardinis Suite"]
     },
     { 
         "type": 'fe',

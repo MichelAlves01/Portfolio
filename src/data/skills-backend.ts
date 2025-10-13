@@ -11,16 +11,21 @@ export const SkillsBackend: Array<Skill>  = [
             <p>After I had other experience with SQL database <b>MySql</b></p>
             <p>While working on project PLEX from NTTData the database used was MongoDB which gave some experience with NoSql databases</p>
         `,
-        "tags": ["UBI", "PLEX (NTT Data)", "AEP", "IBM Internal"]
+        "tags": ["UBI Banca", "PLEX (NTT Data)", "AEP", "IBM Internal"]
     },
     { 
         "type": 'be',
         "name": "Python",
         "level": 1,
         "content": `
-            <p>I had a basic experience with Python developing some cronjobs on <b>Google Cloud</b> to migrate data from one table to a history table</p>
-            <p>A part from this experience I create a personal project for generate a supermarket shopping list where I used <b>Flask</b> 
-            framework to implement the endpoint and <b>Pony ORM</b> to access database</p>
+            <p>
+            I have hands-on experience with Python, primarily through developing cron jobs on Google Cloud
+            to migrate data from main tables to their respective history tables.
+            </p>
+            <p>
+            In addition to this, I built a personal project for generating supermarket shopping lists.
+            For this project, I used the Flask framework to implement REST endpoints and Pony ORM for database access.
+            </p>
         `,
         "tags": ["PLEX (NTT Data)"]
     },
@@ -37,7 +42,7 @@ export const SkillsBackend: Array<Skill>  = [
             <p>Defining the system architecture is one of parts on software development that I enjoy working.</p>
             p - missed Microservices / swagger
         `,
-        "tags": ["IBM Internal" , "AEP"  , "AT&T" , "PLEX (NTT Data)" , "UBI" , "UBS" , "Cardinis Suite"]
+        "tags": ["IBM Internal" , "AEP"  , "AT&T" , "PLEX (NTT Data)" , "UBI Banca" , "UBS" , "Cardinis Suite"]
     },
     { 
         "type": 'be',
@@ -49,7 +54,7 @@ export const SkillsBackend: Array<Skill>  = [
             <p>I Always look to keep studying new feature of the new versions of Java and Always study bit more about Java core concepts.</p>
             <p>I am able to work with Java creating a new Api with <b>Spring boot</b> and <b>Maven</b>.</p>
         `,
-        "tags": ["IBM Internal", "AT&T", "PLEX (NTT Data)", "UBI", "UBS", "Cardinis Suite"]
+        "tags": ["IBM Internal", "AT&T", "PLEX (NTT Data)", "UBI Banca", "UBS", "Cardinis Suite"]
     },
     { 
         "type": 'be',

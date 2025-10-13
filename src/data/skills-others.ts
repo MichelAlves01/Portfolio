@@ -11,7 +11,7 @@ export const skillsOther: Array<Skill>  = [
             <p>Pair programming is another key practice I have utilized within the Scrum framework. By working closely with another developer in real-time, I have found that pair programming enhances code quality, fosters knowledge sharing, and accelerates problem-solving. This approach has been particularly effective in catching bugs early, implementing best practices, and mentoring junior developers, all while maintaining a strong focus on collaboration and collective ownership of the codebase.</p>
             <p>Working within Scrum has not only honed my technical skills but has also improved my ability to communicate effectively, prioritize tasks, and deliver high-quality software on time. The combination of Scrum and pair programming has enabled me to contribute to projects more effectively, ensuring that we deliver value consistently and efficiently.</p>
         `,
-        "tags": ["Cardinis Suite","UBI", "UBS", "Nextier", "PLEX (NTT Data)", "AEP", "IBM Internal"]
+        "tags": ["Cardinis Suite","UBI Banca", "UBS", "Nextier", "PLEX (NTT Data)", "AEP", "IBM Internal"]
     },
     { 
         "type": '*',
@@ -37,7 +37,15 @@ export const skillsOther: Array<Skill>  = [
         "type": '*',
         "name": "TDD",
         "level": 1,
-        "content": "AAA / Spy / Mocking",
+        "content": `
+            <p>
+            I have a solid understanding of Test-Driven Development (TDD) and applied it in a project where I developed Java APIs using Spring Boot. 
+            By writing tests before implementation and following the AAA (Arrange, Act, Assert) pattern, 
+            I ensured a clean testing structure. 
+            Additionally, I used mocking and spying techniques to isolate dependencies, which allowed me to deliver 
+            fully tested and maintainable APIs.
+            </p>
+        `,
         "tags": ["PLEX (NTT Data)", "AEP"]
     },
     { 
@@ -51,7 +59,7 @@ export const skillsOther: Array<Skill>  = [
             <p>Similarly, on GitLab, I have experience setting up and managing repositories, configuring GitLab CI/CD pipelines to automate testing and deployment processes, and using GitLab’s built-in tools for code reviews and project management. My work on these platforms has enhanced my ability to collaborate effectively, maintain high code quality, and streamline development processes.</p>
             <p>Overall, my experience with Git, GitHub, and GitLab has equipped me with the skills to manage version control efficiently, collaborate on code seamlessly, and implement automated workflows that enhance productivity and project success.</p>
         `,
-        "tags": ["Cardinis Suite","UBI", "UBS", "Nextier", "PLEX (NTT Data)", "AT&T", "AEP", "IBM Internal"]
+        "tags": ["Cardinis Suite","UBI Banca", "UBS", "Nextier", "PLEX (NTT Data)", "AT&T", "AEP", "IBM Internal"]
     }
 ]
 

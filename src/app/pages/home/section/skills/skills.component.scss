@@ -4,68 +4,72 @@
     display: flex;
     flex-direction: column;
 
-    h2 {
+    h1 {
         text-align: center;
     }
 
-    .skills-list {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        min-width: 250px;
-        border-radius: 5px;
-        justify-content: space-around;
-        gap: 1rem;
-
-        h3 {
-            text-align: center;
-        }
-
-        span {
+    .skills-container {
+        margin-top: 1rem;
+        
+        .skills-list {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        div {
             min-width: 250px;
-            width: 100%;
-            justify-content: start;
-        }
+            border-radius: 5px;
+            justify-content: space-around;
+            gap: 1rem;
 
-        ul {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 0;
-            li {
-                list-style-type: none;
-                span {
-                    display: flex;
-                    justify-content: space-between;
+            h3 {
+                text-align: center;
+            }
+
+            span {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            div {
+                min-width: 250px;
+                width: 100%;
+                justify-content: start;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 0;
+                li {
+                    list-style-type: none;
+                    span {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+
+                li:hover {
+                    filter: brightness(120%);
+                    cursor: pointer;
                 }
             }
 
-            li:hover {
-                filter: brightness(120%);
-                cursor: pointer;
+            header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                img {
+                    height: 1.2rem;
+                }
             }
-        }
 
-        header {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
 
-            img {
-                height: 1.2rem;
+            .skill-mobile-view {
+                display: none;
             }
-        }
-
-
-        .skill-mobile-view {
-            display: none;
         }
     }
 
@@ -100,6 +104,7 @@
     .skills-container {
         display: flex;
         flex-direction: row;
+        margin-top: 1rem;
     
         .skills-list {
             display: flex;
